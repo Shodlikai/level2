@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infrequent Meanings</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="header"></div>
+
+        <div class="slider-wrapper">
+            <div class="slider">
+                <span id="slider-value">1 / 50</span>
+                <input type="range" id="word-slider" min="0" value="0">
+                <span id="slider-max">50</span>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-inner">
+                <div class="card-front">
+                    <div class="top-circle"></div>
+                    <img src="" alt="" class="image" id="front-image">
+                    <div class="content">
+                        <div class="word-container">
+                            <div class="word en-word" id="word-front">Otavaliyev.M</div>
+                            <span class="pronunciation" id="pronunciation">/SHodlik/</span>
+                        </div>
+                        <div class="type" id="type-front">noun</div>
+                    </div>
+                    <div class="bottom-circle"></div>
+                    <div class="definition">Tap to see the definition</div>   
+                </div>
+                <div class="card-back">
+                    <div class="top-circle"></div>
+                    <img src="" alt="" class="image" id="back-image">
+                    <div class="content">
+                    <div class="word uz-word" id="word-back">uyg'onmoq</div>
+                        <div class="type" id="type-back">fe'l</div>
+                    </div>
+                    <div class="bottom-circle"></div>
+                    <div class="definition">Tarjimani ko'rsatish</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-buttons">
+            <button id="audio-button">Ovoz</button>
+            <button id="next-button">Keyingi</button>
+        </div>
+    </div>
+<!-- Yo'riqnoma uchun modal -->
+<div id="instruction-modal" class="modal">
+   <div class="modal-content">
+         <h2>Fleshcarddan foydalanish bo'yicha yo'riqnoma</h2>
+   <p>&#x25B6; O'ngga sursangiz  keyingi so'z chiqadi.</p>
+<p>&#x25C0; Chapga sursangiz  so'z yodlangan hisoblanadi va qayta chiqmaydi.</p>
+<p>&#x1F504; Kartani ustiga bosing va so'zning tarjimasini ko'rasiz.</p>
+        <button id="close-modal">Tushunarli</button>
+    </div>
+</div>
+    <script src="https://code.responsivevoice.org/responsivevoice.js?key=ftro4Sxr"></script>
+    <script src="script4.js"></script>
+</body>
+
+</html>

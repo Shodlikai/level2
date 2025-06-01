@@ -1,0 +1,275 @@
+body {
+    margin: 20px; /* Tananing chetidan bo‘sh joy – lekin bu yerda birlik yo‘q, to‘g‘risi: margin: 20px; bo‘lishi kerak */
+    font-family: sans-serif; /* Matnlar sans-serif shriftida ko‘rsatiladi */
+}
+
+.container {
+    display: flex; /* Ichki elementlarni moslashuvchan qatorga joylaydi */
+    flex-direction: column; /* Elementlar ustun (vertikal) bo‘ylab joylashadi */
+    align-items: center; /* Elementlarni markazga tekislaydi */
+    height: 90vh; /* Ekranning 90% balandligini egallaydi */
+    background-color: white; /* Oq fon rangi */
+}
+
+.header {
+    display: flex; /* Ichki elementlar qator bo‘ylab joylashadi */
+    justify-content: space-between; /* Elementlar orasiga maksimal bo‘shliq qo‘yadi */
+    align-items: center; /* Vertikal markazga joylaydi */
+    width: 100%; /* Eni konteynerga teng */
+    padding: 20px; /* Ichki elementlar atrofida 20px joy */
+}
+
+.slider {
+    display: flex; /* Slider va tegishli elementlarni yonma-yon qiladi */
+    align-items: center; /* Vertikal markazga tekislaydi */
+    gap: 10px; /* Elementlar orasida 10px bo‘shliq */
+}
+
+.slider input[type="range"] {
+    width: 200px; /* Slider eni */
+}
+
+.buttons {
+    display: flex; /* Tugmalarni yonma-yon joylaydi */
+    gap: 10px; /* Tugmalar orasidagi bo‘shliq */
+}
+
+.button {
+    width: 40px; /* Tugmaning eni */
+    height: 40px; /* Tugmaning bo‘yi */
+    border-radius: 50%; /* Tugma yumaloq shaklda bo‘ladi */
+    border: none; /* Chegarasiz */
+    background-color: #e0e0e0; /* Kulrang fon */
+    display: flex; /* Rasmni markazga tekislaydi */
+    justify-content: center;
+    align-items: center;
+}
+
+.button img {
+    width: 20px; /* Tugmadagi rasm o‘lchami */
+}
+
+.card {
+    position: relative; /* Harakatga tayyor holat */
+    width: 80%; /* Kartaning eni konteynerning 80% i */
+    max-width: 400px; /* Maksimal eni 400px */
+    height: 600px; /* Kartaning bo‘yi */
+    background-color: white; /* Fon rangi */
+    border-radius: 20px; /* Burchaklar yumaloqlashtirilgan */
+    box-shadow: 0 0 16px rgba(0, 0, 0, 0.15); /* Tashqi soyasi */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 10px; /* Ichki bo‘shliq */
+    perspective: 1000px; /* 3D effekt uchun */
+    overflow: hidden; /* Tashqariga chiqqan elementlar yashiriladi */
+    transition: transform 0.3s ease, left 0.3s ease; /* Siljish va burilishlar uchun animatsiya */
+    left: 0; /* Chapga-o‘ngga siljish holatiga tayyor */
+}
+
+.card::after {
+    content: ""; /* Qoshimcha effekt berish uchun bo‘sh kontent */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); /* Pastdan soya effekti */
+    pointer-events: none; /* Hodisalarni tutmaydi */
+}
+
+.card-inner {
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d; /* 3D effektni saqlash */
+    transition: transform 0.6s; /* Aylanish effekti */
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.card.flipped .card-inner {
+    transform: rotateY(180deg); /* Orqaga aylantirish */
+}
+
+.card-front,
+.card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden; /* Orqa taraf ko‘rinmasligi */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-front .image {
+    display: none; /* Old tomonda rasm yashirilgan */
+}
+
+.card-back {
+    transform: rotateY(180deg); /* Orqa tarafni 180 gradus aylantirish */
+}
+
+.top-circle,
+.bottom-circle {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 100px;
+    background-color: #40c4ff;
+    border-radius: 0 0 100% 100%; /* Pastki qismni yumaloq qilish */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.top-circle {
+    top: 0;
+    transform: translate(-50%, -50%);
+}
+
+.bottom-circle {
+    bottom: 0;
+    transform: translate(-50%, 50%) rotate(180deg);
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px; /* Elementlar orasidagi bo‘shliq */
+}
+
+.word-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+/* Inglizcha so‘zlar (old tomonda) */
+.en-word {
+    font-size: 32px;       /* Kattaroq shrift */
+    font-weight: bold;     /* Qalin shrift */
+    color: #000;           /* Qora rang */
+    text-align: center;
+}
+
+/* O‘zbekcha tarjimalar (orqa tomonda) */
+.uz-word {
+    font-size: 22px;       /* Kichikroq shrift */
+    font-weight: bold;     /* Qalin shrift */
+    color: red;        /* Yashil tusli matn */
+    text-align: center;
+}
+
+.pronunciation {
+    font-size: 16px; /* Talaffuz shrift o‘lchami */
+    color: #888;
+    margin-top: 5px; /* Yuqoridan bo‘shliq */
+}
+
+.type {
+    background-color: #40c4ff;
+    color: white;
+    font-size: 15px; 
+    padding: 1px 2px;
+    border-radius: 5px;
+}
+
+.definition {
+    text-align: center;
+    color: #808080;
+    font-size: 10px; /* Ta’rif kichik yozuvda */
+    line-height: 1.4;
+    max-width: 90%;
+}
+
+.card-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    padding: 20px;
+}
+
+#next-button,
+#audio-button {
+    padding: 15px 30px;
+    border: none;
+    border-radius: 10px;
+    background-color: #40c4ff;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+}
+
+#next-button:hover,
+#audio-button:hover {
+    background-color: #29b6f6; /* Hover paytida biroz to‘qroq ko‘k */
+}
+
+.image {
+    width: 150px;
+    height: 150px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.card.swiping-left {
+    left: -100%; /* Chapga siljish */
+    transform: rotate(-10deg); /* Chapga biroz burilish */
+}
+
+.card.swiping-right {
+    left: 100%; /* O‘ngga siljish */
+    transform: rotate(10deg); /* O‘ngga biroz burilish */
+}
+
+/* Modal oynani butun ekranni qoplab, markazda ko‘rsatish */
+.modal {
+    display: none; /* Dastlab yashiringan */
+    position: fixed;
+    z-index: 1000; /* Har doim yuqorida turadi */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Qoramtir fon */
+    justify-content: center;
+    align-items: center;
+}
+
+/* Modalning asosiy blokini bezash */
+.modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 80%;
+}
+
+/* Modal yopish tugmasi */
+#close-modal {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #40c4ff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#close-modal:hover {
+    background-color: #29b6f6;
+}
