@@ -20,7 +20,7 @@ const words = [
   { word: "ceremony", pronunciation: "ˈsɛrɪməni", translation: "marosim, tadbir" },
   { word: "counterpart", pronunciation: "ˈkaʊntəpɑːt", translation: "hamkasb, sherik" },
   { word: "unemployment", pronunciation: "ˌʌnɪmˈplɔɪmənt", translation: "ishsizlik" },
-  { word: "prospect", pronunciation: "ˈprɒspɛkt", translation: "prospekt" },
+  { word: "prospect", pronunciation: "ˈprɒspɛkt", translation: "istiqbol kelajak" },
   { word: "hostel", pronunciation: "ˈhɒstəl", translation: "yotoqxona" },
   { word: "hospitality", pronunciation: "ˌhɒspɪˈtælɪti", translation: "mehmondo‘stlik" },
   { word: "obtain", pronunciation: "əbˈteɪn", translation: "erishmoq, qo‘lga kiritmoq" },

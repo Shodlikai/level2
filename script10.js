@@ -33,7 +33,7 @@ let words = [
   { english: "ceremony", uzbek: "marosim, tadbir", type: "ot", pronunciation: "/ˈsɛrɪməni/" },
   { english: "counterpart", uzbek: "hamkasb, sherik", type: "ot", pronunciation: "/ˈkaʊntəpɑːt/" },
   { english: "unemployment", uzbek: "ishsizlik", type: "ot", pronunciation: "/ˌʌnɪmˈplɔɪmənt/" },
-  { english: "prospect", uzbek: "prospekt", type: "ot", pronunciation: "/ˈprɒspɛkt/" },
+  { english: "prospect", uzbek: "istiqbol, kelajak", type: "ot", pronunciation: "/ˈprɒspɛkt/" },
   { english: "hostel", uzbek: "yotoqxona", type: "ot", pronunciation: "/ˈhɒstəl/" },
   { english: "hospitality", uzbek: "mehmondo‘stlik", type: "ot", pronunciation: "/ˌhɒspɪˈtælɪti/" },
   { english: "obtain", uzbek: "erishmoq, qo‘lga kiritmoq", type: "fe’l", pronunciation: "/əbˈteɪn/" },
