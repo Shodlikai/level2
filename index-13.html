@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>So‘z O‘yini</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script-13.js"></script>
+    <script src="https://code.responsivevoice.org/responsivevoice.js?key=ftro4Sxr"></script>
+</head>
+<body>
+    <nav class="navbar" id="navHome">
+    <span class="nav-title"><h1>Bosh sahifa</h1></span>
+</nav>
+<script>
+    document.getElementById("navHome").addEventListener("click", function() {
+        window.location.href = "index.html";
+    });
+</script>
+    <header>
+        <h1>So‘z O‘yini</h1>
+    </header>
+    <div class="container">
+        <button id="toggleMode">⏳ Time Mode: O‘chiq</button>
+        <div class="game">
+            <h2 id="question">Bu yerda o‘zbekcha so‘z chiqadi</h2>
+            <div id="timeModeElements" style="display: none;">
+                <p>Vaqt: <span id="timer">15</span> soniya</p>
+            </div>
+            <input type="text" id="answer" placeholder="Inglizcha tarjimani kiriting">
+            <button onclick="checkAnswer()">Tekshirish</button>
+            <p id="result"></p>
+            <p>Urinishlar: <span id="attempts">0</span> | To‘g‘ri: <span id="correct">0</span> | Foiz: <span id="percentage">0%</span></p>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2025 So‘z O‘yini | <a href="mailto:dasturchi.99@gmail.com">Dasturchi.99@gmail.com</a></p>
+    </footer>
+</body>
+</html>
