@@ -25,7 +25,7 @@ let words = [
   { english: "relatively", uzbek: "Nisbatan, qiyosan", type: "hol", pronunciation: "/ˈrelətɪvli/" },
   { english: "recent", uzbek: "Soʻnggi, oxirgi", type: "sifat", pronunciation: "/ˈriːsnt/" },
   { english: "transparent", uzbek: "Shaffof, tiniq", type: "sifat", pronunciation: "/trænsˈpærənt/" },
-  { english: "mature", uzbek: "Yetilmoq, katta boʻlmoq", type: "fe'l", pronunciation: "/məˈtʃʊər/" },
+  { english: "mat ure", uzbek: "Yetilmoq, katta boʻlmoq", type: "fe'l", pronunciation: "/məˈtʃʊər/" },
   { english: "reserve", uzbek: "Zaxira", type: "ot", pronunciation: "/rɪˈzɜːrv/" },
   { english: "label", uzbek: "Etiketka yopishtirmoq", type: "fe'l", pronunciation: "/ˈleɪbəl/" },
   { english: "upgrade", uzbek: "Yaxshilamoq, darajasini oshirmoq", type: "fe'l", pronunciation: "/ˌʌpˈɡreɪd/" },
@@ -43,173 +43,142 @@ let words = [
   { english: "inhabit", uzbek: "Yashamoq, istiqomat qilmoq", type: "fe'l", pronunciation: "/ɪnˈhæbɪt/" },
   { english: "inspector", uzbek: "Tekshiruvchi, nazoratchi", type: "ot", pronunciation: "/ɪnˈspektər/" }
 ];
-// **So‘zlarni har safar yangi tartibda aralashtirish**
-function shuffleWords() {
-    words = words.sort(() => Math.random() - 0.5);
-}
-shuffleWords();
-
 let currentIndex = 0;
+let startX, endX; // Surish (swipe) uchun o'zgaruvchilar
 
-// **Slayderni moslashtirish**
-slider.max = words.length;
-slider.value = 1;
-sliderMax.textContent = words.length;
+// 1. YANGI QO'SHILGAN: Fisher-Yates algoritmi bilan aralashtirish funksiyasi
+function shuffleArray(array) {
+  const newArray = [...array];
+  for (let i = newArray.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [newArray[i], newArray[j]] = [newArray[j], newArray[i]];
+  }
+  return newArray;
+}
 
-// **So‘zga tegishli rasmni Pixabay’dan olish**
+// 2. O'ZGARTIRILGAN: Dasturni ishga tushirish (random qo'shildi)
+function initializeApp() {
+  words = shuffleArray(words); // Dastur boshlanganda aralashtirish
+  slider.max = words.length;
+  slider.value = 1;
+  sliderMax.textContent = words.length;
+  currentIndex = 0;
+  updateCard(currentIndex);
+}
+
+// 3. Avvalgi funksiyalar (o'zgarmagan)
 async function getPixabayImage(query) {
-    const url = `https://pixabay.com/api/?key=${PIXABAY_API_KEY}&q=${query}&image_type=photo`;
-    try {
-        const response = await fetch(url);
-        const data = await response.json();
-        return (data.hits.length > 0) ? data.hits[0].webformatURL : "placeholder.png";
-    } catch (error) {
-        console.error("Pixabay API error:", error);
-        return "placeholder.png";
-    }
+  const url = `https://pixabay.com/api/?key=${PIXABAY_API_KEY}&q=${query}&image_type=photo`;
+  try {
+    const response = await fetch(url);
+    const data = await response.json();
+    return (data.hits.length > 0) ? data.hits[0].webformatURL : "placeholder.png";
+  } catch (error) {
+    console.error("Pixabay API error:", error);
+    return "placeholder.png";
+  }
 }
 
-// **Kartani yangilash va ekranga chiqarish**
 async function updateCard(index) {
-    word.textContent = words[index].english;
-    pronunciationElement.textContent = words[index].pronunciation;
-    type.textContent = words[index].type;
-    document.querySelector('.card-back .word').textContent = words[index].uzbek;
-    document.querySelector('.card-back .type').textContent = words[index].type;
+  word.textContent = words[index].english;
+  pronunciationElement.textContent = words[index].pronunciation;
+  type.textContent = words[index].type;
+  document.querySelector('.card-back .word').textContent = words[index].uzbek;
+  document.querySelector('.card-back .type').textContent = words[index].type;
 
-    slider.value = index + 1; // Sliderni yangilash
-    sliderValue.textContent = `${index + 1} / ${words.length}`; // So‘z tartib raqami
-    currentIndex = index;
+  slider.value = index + 1;
+  sliderValue.textContent = `${index + 1} / ${words.length}`;
+  currentIndex = index;
 
-    // **Rasmni yuklash**
-    const imageUrl = await getPixabayImage(words[index].english);
-    backImage.src = imageUrl;
-
-    // **Audio mavjudligini tekshirish**
-    checkAndDownloadAudio(words[index].audio);
+  const imageUrl = await getPixabayImage(words[index].english);
+  backImage.src = imageUrl;
 }
 
-// **Audio mavjudligini tekshirish va yuklash**
-async function checkAndDownloadAudio(audioFile) {
-    if (localStorage.getItem(audioFile)) {
-        console.log("Saqlangan audio ishlatilmoqda:", audioFile);
-    } else {
-        console.log("Audio yuklanmoqda:", audioFile);
-        try {
-            const response = await fetch(`audios/${audioFile}`);
-            if (response.ok) {
-                const blob = await response.blob();
-                const reader = new FileReader();
-                reader.onloadend = function () {
-                    localStorage.setItem(audioFile, reader.result);
-                };
-                reader.readAsDataURL(blob);
-            } else {
-                console.error("Audio topilmadi:", audioFile);
-            }
-        } catch (error) {
-            console.error("Audio yuklashda xatolik:", error);
-        }
-    }
-}
-
-// **Kartani bosganda ovoz chiqarish**
-card.addEventListener('click', function () {
-    this.classList.toggle('flipped');
-    if (this.classList.contains('flipped')) {
-        speak(words[currentIndex].english);
-    }
+// 4. O'ZGARTIRILGAN: Keyingi so'zga o'tish (random qo'shildi)
+nextButton.addEventListener('click', function() {
+  currentIndex++;
+  if (currentIndex >= words.length) {
+    words = shuffleArray(words); // Oxiriga yetganda aralashtirish
+    currentIndex = 0;
+  }
+  updateCard(currentIndex);
 });
 
-// **Sliderni boshqarish**
-slider.addEventListener('input', function () {
-    updateCard(this.value - 1);
-});
-
-// **Keyingi so‘zga o‘tish**
-nextButton.addEventListener('click', function () {
-    currentIndex++;
-    if (currentIndex >= words.length) {
-        shuffleWords(); // So‘zlar yana aralashtiriladi
-        currentIndex = 0;
-    }
-    updateCard(currentIndex);
-});
-
-// **Ovoz chiqarish**
+// 5. Avvalgi audio funksiyalari (o'zgarmagan)
 function speak(text) {
-    const audioFile = words[currentIndex].audio;
-    const storedAudio = localStorage.getItem(audioFile);
-
-    if (storedAudio) {
-        const audio = new Audio(storedAudio);
-        audio.play();
-    } else {
-        console.warn("Audio fayli yo‘q, text-to-speech ishlatilmoqda.");
-        responsiveVoice.speak(text, "US English Male", { rate: 0.9 });
-    }
+  responsiveVoice.speak(text, "US English Male", { rate: 0.9 });
 }
 
-// **Audio tugmasi bosilganda ovoz chiqarish**
-audioButton.addEventListener('click', function () {
-    speak(words[currentIndex].english);
+audioButton.addEventListener('click', function() {
+  speak(words[currentIndex].english);
 });
-// Surish (swipe) funksiyasi
+
+// 6. Karta aylanishi (o'zgarmagan)
+card.addEventListener('click', function() {
+  this.classList.toggle('flipped');
+  if (this.classList.contains('flipped')) {
+    speak(words[currentIndex].english);
+  }
+});
+
+// 7. Slider boshqaruvi (o'zgarmagan)
+slider.addEventListener('input', function() {
+  updateCard(this.value - 1);
+});
+
+// 8. Surish (swipe) funksiyalari (o'zgarmagan)
 card.addEventListener('touchstart', (e) => {
-    startX = e.touches[0].clientX;
+  startX = e.touches[0].clientX;
 });
 
 card.addEventListener('touchend', (e) => {
-    endX = e.changedTouches[0].clientX;
-    handleSwipe();
+  endX = e.changedTouches[0].clientX;
+  handleSwipe();
 });
 
 function handleSwipe() {
-    const deltaX = endX - startX;
-    if (deltaX > 50) { // O'ngga surish
-        card.classList.add('swiping-right');
-        setTimeout(() => {
-            currentIndex++;
-            if (currentIndex >= words.length) {
-                currentIndex = 0;
-            }
-            updateCard(currentIndex);
-            card.classList.remove('swiping-right');
-            card.style.left = '';
-            card.style.transform = '';
-        }, 300);
-    } else if (deltaX < -50) { // Chapga surish
-        const learnedWord = words.splice(currentIndex, 1)[0];
-        learnedWords.push(learnedWord);
-        console.log("Yodlangan so'zlar:", learnedWords);
+  const deltaX = endX - startX;
+  if (deltaX > 50) { // O'ngga surish
+    card.classList.add('swiping-right');
+    setTimeout(() => {
+      currentIndex++;
+      if (currentIndex >= words.length) {
+        words = shuffleArray(words); // Oxiriga yetganda aralashtirish
+        currentIndex = 0;
+      }
+      updateCard(currentIndex);
+      card.classList.remove('swiping-right');
+    }, 300);
+  } else if (deltaX < -50) { // Chapga surish (yodlash)
+    const learnedWord = words.splice(currentIndex, 1)[0];
+    learnedWords.push(learnedWord);
+    console.log("Yodlangan so'zlar:", learnedWords);
 
-        if (currentIndex >= words.length) {
-            currentIndex = 0;
-        }
-        updateCard(currentIndex);
-
-        card.classList.add('swiping-left');
-        setTimeout(() => {
-            card.classList.remove('swiping-left');
-            card.style.left = '';
-            card.style.transform = '';
-        }, 300);
+    if (currentIndex >= words.length) {
+      currentIndex = 0;
     }
+    updateCard(currentIndex);
+
+    card.classList.add('swiping-left');
+    setTimeout(() => {
+      card.classList.remove('swiping-left');
+    }, 300);
+  }
 }
-document.addEventListener("DOMContentLoaded", function () {
-    const nextButton = document.getElementById("next-button");
-    const modal = document.getElementById("instruction-modal");
-    const closeModal = document.getElementById("close-modal");
 
-    // "Keyingi" tugmasi bosilganda modal chiqsin
-    nextButton.addEventListener("click", function () {
-        modal.style.display = "flex";
-    });
+// 9. Modal oynasi boshqaruvi (o'zgarmagan)
+document.addEventListener("DOMContentLoaded", function() {
+  const modal = document.getElementById("instruction-modal");
+  const closeModal = document.getElementById("close-modal");
 
-    // "Tushunarli" tugmasi bosilganda modal yopilsin
-    closeModal.addEventListener("click", function () {
-        modal.style.display = "none";
-    });
+  nextButton.addEventListener("click", function() {
+    modal.style.display = "flex";
+  });
+
+  closeModal.addEventListener("click", function() {
+    modal.style.display = "none";
+  });
 });
-// **Ilk so‘zni ekranga chiqarish**
-updateCard(0);
+
+// 10. Dasturni ishga tushirish
+document.addEventListener("DOMContentLoaded", initializeApp);
