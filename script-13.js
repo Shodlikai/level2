@@ -1,5 +1,5 @@
 const words = [
-  { word: "Military", pronunciation: "ˈmɪlɪtəri", translation: "Harbiy" },
+  { word: "military", pronunciation: "ˈmɪlɪtəri", translation: "Harbiy" },
   { word: "descend", pronunciation: "dɪˈsend", translation: "Tushmoq" },
   { word: "bloody", pronunciation: "ˈblʌdi", translation: "Qonli, qonga belangan" },
   { word: "incident", pronunciation: "ˈɪnsɪdənt", translation: "Voqea, hodisa" },
