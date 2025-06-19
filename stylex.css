@@ -71,7 +71,16 @@ nav {
     max-width: 500px;
     margin: 0 auto;
 }
+/* Add to stylex.css */
+#option3-btn {
+    background: #9b59b6;
+    color: white;
+}
 
+#option4-btn {
+    background: #f39c12;
+    color: white;
+}
 .lesson-btn {
     background-color: #3498db;
     color: white;

@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>AMAZON.COM - DUNYODAGI ENG KATTA INTERNET KOMPANIYASI</title>
+    <script src="https://code.responsivevoice.org/responsivevoice.js?key=ftro4Sxr"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-radius: 8px;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin-bottom: 20px;
+            border-radius: 4px;
+        }
+        .text-content p {
+            margin: 0 0 15px 0;
+            text-align: justify;
+        }
+        .text-content span.word-span {
+            cursor: pointer;
+            border-bottom: 1px dotted #007bff;
+            transition: color 0.3s ease, background-color 0.3s ease;
+            line-height: 2;
+        }
+        .text-content span.word-span:hover {
+            color: #0056b3;
+        }
+        .text-content span.word-span.highlight {
+            background-color: yellow;
+            color: black;
+            font-weight: bold;
+            border-bottom: 1px solid transparent;
+        }
+        .read-sentence-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background-color: #333;
+            color: white;
+            font-size: 12px;
+            font-weight: bold;
+            cursor: pointer;
+            border: none;
+            outline: none;
+            margin-left: 5px;
+            vertical-align: middle;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+            transition: background-color 0.2s ease, transform 0.1s ease;
+            flex-shrink: 0;
+        }
+        .read-sentence-button:hover {
+            background-color: #000;
+            transform: scale(1.05);
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0; top: 0;
+            width: 100%; height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.4);
+        }
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 25px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 400px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            text-align: center;
+            position: relative;
+        }
+        .close-button {
+            color: #aaa;
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .close-button:hover,
+        .close-button:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        #modal-original-word {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        #modal-pronunciation {
+            font-size: 1.1em;
+            color: #555;
+            margin-bottom: 10px;
+            font-style: italic;
+        }
+        #modal-translation {
+            font-size: 1.3em;
+            color: #007bff;
+            margin-bottom: 10px;
+        }
+        #modal-word-type {
+            font-size: 1em;
+            color: #777;
+            background-color: #e0e0e0;
+            padding: 5px 10px;
+            border-radius: 5px;
+            display: inline-block;
+        }
+        .translate-button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .translate-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <img id="dynamic-image" src="https://image.pollinations.ai/prompt/Amazon%20company" alt="Amazon.com kompaniyasi" />
+
+    <div class="text-content" id="main-text">
+        <div class="english-text-container">
+            <p>
+                Amazon.com is the biggest online company in the world. It started as a bookstore on the Internet in the 1990s. Over time, it grew bigger. Today, Amazon sells many things like CDs, DVDs, clothes, and electronics. The company also makes tablets and e-readers. People can save their photos and files on Amazon’s cloud.
+            </p>
+            <p>
+                Amazon sells products in many countries. It has websites in the UK, Germany, China, Australia, and other places.
+            </p>
+            <p>
+                Jeff Bezos started Amazon.com in 1994. At first, he worked in a small garage in Washington. After one year, Amazon sold many books. People could order books and write reviews. In 1997, Amazon started selling shares on the stock market. By 2000, it made more than one billion dollars.
+            </p>
+            <p>
+                Amazon kept growing. It bought other companies and allowed them to sell things on its website.
+            </p>
+            <p>
+                In 2007, Amazon made a new device, the Kindle, an eBook reader. Many people bought it. In 2011, the company made a tablet called the Amazon Fire. Later, Amazon started selling music and videos online. Customers can store their purchases on a private cloud and download them anytime.
+            </p>
+            <p>
+                Now, Amazon serves 20 million people every day. It makes over 34 billion dollars a year.
+            </p>
+            <p>
+                Amazon is successful for many reasons. One reason is Jeff Bezos. He takes risks and has big ideas. Amazon’s website helps people find what they like.
+            </p>
+            <p>
+                Even though Amazon is the biggest online store, some people criticize it. Some say Amazon is too powerful. Others say workers in Amazon’s warehouses have bad conditions.
+            </p>
+            <p>
+                Amazon is a very large company. It sells many products at low prices and delivers them quickly.
+            </p>
+            <p>
+                **Interesting facts:**
+            </p>
+            <p>
+                1. Jeff Bezos first chose the name “Cadabra” (like “Abracadabra”). Later, he changed it to “Amazon” because it sounded bigger and stronger. He also wanted a name starting with “A” to be first in lists.
+            </p>
+            <p>
+                2. At first, Amazon used a bell to signal each purchase. Later, orders came too often, so they stopped using it.
+            </p>
+            <p>
+                3. Amazon did not earn money for almost 10 years. Jeff Bezos focused on growing the company first.
+            </p>
+            <p>
+                4. Amazon has more than 175 big warehouses around the world. Some are larger than 28 football fields together!
+            </p>
+        </div>
+
+        <div class="uzbek-text-container" style="display:none;">
+            <p>
+                Amazon.com dunyodagi eng katta onlayn kompaniyadir. U 1990-yillarda Internetda kitob do'koni sifatida boshlangan. Vaqt o'tishi bilan u kattalashib bordi. Bugungi kunda Amazon kompakt-disklar, DVD disklar, kiyim-kechaklar va elektronika kabi ko'plab narsalarni sotadi. Kompaniya, shuningdek, planshetlar va elektron kitob o'qish qurilmalarini ishlab chiqaradi. Odamlar o'zlarining rasmlarini va fayllarini Amazon bulutida saqlashlari mumkin.
+            </p>
+            <p>
+                Amazon ko'plab mamlakatlarda mahsulotlar sotadi. Uning Buyuk Britaniya, Germaniya, Xitoy, Avstraliya va boshqa joylarda veb-saytlari mavjud.
+            </p>
+            <p>
+                Jeff Bezos Amazon.com saytini 1994 yilda boshlagan. Avvaliga u Vashingtondagi kichik garajda ishlagan. Bir yildan keyin Amazon ko'plab kitoblar sotdi. Odamlar kitob buyurtma qilib, sharhlar yozishlari mumkin edi. 1997 yilda Amazon fond bozorida aksiyalarini sotishni boshladi. 2000 yilga kelib, u bir milliard dollardan ko'proq daromad oldi.
+            </p>
+            <p>
+                Amazon o'sishda davom etdi. U boshqa kompaniyalarni sotib oldi va ularga o'z veb-saytida narsalar sotishga ruxsat berdi.
+            </p>
+            <p>
+                2007 yilda Amazon yangi qurilma, Kindle, elektron kitob o'quvchisini yaratdi. Ko'plab odamlar uni sotib oldilar. 2011 yilda kompaniya Amazon Fire nomli planshet yaratdi. Keyinchalik, Amazon onlayn musiqa va videolarni sotishni boshladi. Mijozlar o'z xaridlarini shaxsiy bulutda saqlashlari va istalgan vaqtda yuklab olishlari mumkin.
+            </p>
+            <p>
+                Hozirgi kunda Amazon har kuni 20 million odamga xizmat ko'rsatadi. U yiliga 34 milliard dollardan ortiq daromad oladi.
+            </p>
+            <p>
+                Amazon ko'plab sabablarga ko'ra muvaffaqiyatli. Bir sabab Jeff Bezosdir. U tavakkal qiladi va katta g'oyalarga ega. Amazon veb-sayti odamlarga o'zlari yoqtirgan narsalarni topishga yordam beradi.
+            </p>
+            <p>
+                Amazon eng katta onlayn do'kon bo'lishiga qaramay, ba'zi odamlar uni tanqid qilishadi. Ba'zilar Amazon juda kuchli deb aytishadi. Boshqalar esa Amazon omborlaridagi ishchilarning sharoiti yomon deb aytishadi.
+            </p>
+            <p>
+                Amazon juda katta kompaniya. U ko'plab mahsulotlarni arzon narxlarda sotadi va ularni tezda yetkazib beradi.
+            </p>
+            <p>
+                **Qiziqarli faktlar:**
+            </p>
+            <p>
+                1. Jeff Bezos dastlab "Cadabra" (xuddi "Abracadabra" kabi) nomini tanlagan. Keyinchalik, u "Amazon" ga o'zgartirdi, chunki u kattaroq va kuchliroq eshitilardi. U, shuningdek, ro'yxatlarda birinchi bo'lish uchun "A" bilan boshlanadigan nomni xohladi.
+            </p>
+            <p>
+                2. Dastlab, Amazon har bir xaridni bildirish uchun qo'ng'iroqdan foydalangan. Keyinchalik, buyurtmalar juda tez-tez kelib turdi, shuning uchun ular undan foydalanishni to'xtatdilar.
+            </p>
+            <p>
+                3. Amazon deyarli 10 yil davomida pul topmadi. Jeff Bezos avval kompaniyani o'stirishga e'tibor qaratdi.
+            </p>
+            <p>
+                4. Amazon dunyo bo'ylab 175 dan ortiq katta omborlarga ega. Ba'zilari 28 ta futbol maydonidan kattaroqdir!
+            </p>
+        </div>
+    </div>
+
+    <button class="translate-button" id="toggle-lang-button">O'zbekchaga o'girish</button>
+</div>
+
+<div id="myModal" class="modal">
+    <div class="modal-content">
+        <span class="close-button">&times;</span>
+        <div id="modal-original-word"></div>
+        <div id="modal-pronunciation"></div>
+        <div id="modal-translation"></div>
+        <div id="modal-word-type"></div>
+    </div>
+</div>
+<script>
+    const textContent = document.getElementById('main-text');
+    const englishTextContainer = document.querySelector('.english-text-container');
+    const uzbekTextContainer = document.querySelector('.uzbek-text-container');
+    const modal = document.getElementById('myModal');
+    const closeButton = document.querySelector('.close-button');
+    const modalOriginalWord = document.getElementById('modal-original-word');
+    const modalPronunciation = document.getElementById('modal-pronunciation');
+    const modalTranslation = document.getElementById('modal-translation');
+    const modalWordType = document.getElementById('modal-word-type');
+    const toggleLangButton = document.getElementById('toggle-lang-button');
+    let currentLang = 'en';
+
+    let isDragging = false;
+    let startX = 0;
+    let startY = 0;
+    let draggedElement = null;
+    const DRAG_THRESHOLD = 20;
+
+    // To'liq lug'at: barcha matndagi so'zlarni qamrab olgan, kichik so'zlar, predloglar va boshqalar bilan
+    const wordData = {
+        "Amazon.com": { meaning: { meaning: "Amazon.com", pronunciation: "/ˈæməzɒn dɒt kɒm/" }, type: "Ot" },
+        "biggest": { meaning: { meaning: "eng katta", pronunciation: "/ˈbɪɡɪst/" }, type: "Sifat" },
+        "online": { meaning: { meaning: "onlayn", pronunciation: "/ˈɒnlaɪn/" }, type: "Sifat" },
+        "company": { meaning: { meaning: "kompaniya", pronunciation: "/ˈkʌmpəni/" }, type: "Ot" },
+        "world": { meaning: { meaning: "dunyo", pronunciation: "/wɜːrld/" }, type: "Ot" },
+        "started": { meaning: { meaning: "boshladi", pronunciation: "/ˈstɑːrtɪd/" }, type: "Fe'l" },
+        "bookstore": { meaning: { meaning: "kitob do'koni", pronunciation: "/ˈbʊkˌstɔːr/" }, type: "Ot" },
+        "Internet": { meaning: { meaning: "Internet", pronunciation: "/ˈɪntərˌnet/" }, type: "Ot" },
+        "1990s": { meaning: { meaning: "1990-yillar", pronunciation: "/naɪntiːnz/" }, type: "Son" },
+        "Over": { meaning: { meaning: "davomida", pronunciation: "/ˈoʊvər/" }, type: "Predlog" },
+        "time": { meaning: { meaning: "vaqt", pronunciation: "/taɪm/" }, type: "Ot" },
+        "grew": { meaning: { meaning: "o'sdi", pronunciation: "/ɡruː/" }, type: "Fe'l" },
+        "bigger": { meaning: { meaning: "kattaroq", pronunciation: "/ˈbɪɡər/" }, type: "Sifat" },
+        "Today": { meaning: { meaning: "bugun", pronunciation: "/təˈdeɪ/" }, type: "Ravish" },
+        "sells": { meaning: { meaning: "sotadi", pronunciation: "/selz/" }, type: "Fe'l" },
+        "many": { meaning: { meaning: "ko'p", pronunciation: "/ˈmeni/" }, type: "Sifat" },
+        "things": { meaning: { meaning: "narsalar", pronunciation: "/θɪŋz/" }, type: "Ot" },
+        "CDs": { meaning: { meaning: "kompakt-disklar", pronunciation: "/siː diːz/" }, type: "Ot" },
+        "DVDs": { meaning: { meaning: "DVD disklar", pronunciation: "/diː viː diːz/" }, type: "Ot" },
+        "clothes": { meaning: { meaning: "kiyim-kechaklar", pronunciation: "/kloʊðz/" }, type: "Ot" },
+        "electronics": { meaning: { meaning: "elektronika", pronunciation: "/ɪˌlekˈtrɒnɪks/" }, type: "Ot" },
+        "makes": { meaning: { meaning: "ishlab chiqaradi", pronunciation: "/meɪks/" }, type: "Fe'l" },
+        "tablets": { meaning: { meaning: "planshetlar", pronunciation: "/ˈtæblɪts/" }, type: "Ot" },
+        "e-readers": { meaning: { meaning: "elektron kitob o'quvchilar", pronunciation: "/ˈiː ˌriːdərz/" }, type: "Ot" },
+        "People": { meaning: { meaning: "odamlar", pronunciation: "/ˈpiːpl/" }, type: "Ot" },
+        "save": { meaning: { meaning: "saqlash", pronunciation: "/seɪv/" }, type: "Fe'l" },
+        "photos": { meaning: { meaning: "rasmlar", pronunciation: "/ˈfoʊtoʊz/" }, type: "Ot" },
+        "files": { meaning: { meaning: "fayllar", pronunciation: "/faɪlz/" }, type: "Ot" },
+        "cloud": { meaning: { meaning: "bulut", pronunciation: "/klaʊd/" }, type: "Ot" },
+        "products": { meaning: { meaning: "mahsulotlar", pronunciation: "/ˈprɒdʌkts/" }, type: "Ot" },
+        "countries": { meaning: { meaning: "mamlakatlar", pronunciation: "/ˈkʌntriz/" }, type: "Ot" },
+        "websites": { meaning: { meaning: "veb-saytlar", pronunciation: "/ˈwebsaɪts/" }, type: "Ot" },
+        "UK": { meaning: { meaning: "Buyuk Britaniya", pronunciation: "/juː keɪ/" }, type: "Ot" },
+        "Germany": { meaning: { meaning: "Germaniya", pronunciation: "/ˈdʒɜːrməni/" }, type: "Ot" },
+        "China": { meaning: { meaning: "Xitoy", pronunciation: "/ˈtʃaɪnə/" }, type: "Ot" },
+        "Australia": { meaning: { meaning: "Avstraliya", pronunciation: "/ɒˈstreɪliə/" }, type: "Ot" },
+        "places": { meaning: { meaning: "joylar", pronunciation: "/pleɪsɪz/" }, type: "Ot" },
+        "Jeff": { meaning: { meaning: "Jeff", pronunciation: "/dʒef/" }, type: "Ot" },
+        "Bezos": { meaning: { meaning: "Bezos", pronunciation: "/ˈbeɪzoʊs/" }, type: "Ot" },
+        "1994": { meaning: { meaning: "1994", pronunciation: "/naɪnˈtiːn ˈnaɪnti fɔːr/" }, type: "Son" },
+        "first": { meaning: { meaning: "avval", pronunciation: "/fɜːrst/" }, type: "Ravish" },
+        "worked": { meaning: { meaning: "ishladi", pronunciation: "/wɜːrkt/" }, type: "Fe'l" },
+        "small": { meaning: { meaning: "kichik", pronunciation: "/smɔːl/" }, type: "Sifat" },
+        "garage": { meaning: { meaning: "garaj", pronunciation: "/ɡəˈrɑːʒ/" }, type: "Ot" },
+        "Washington": { meaning: { meaning: "Vashington", pronunciation: "/ˈwɒʃɪŋtən/" }, type: "Ot" },
+        "One": { meaning: { meaning: "bir", pronunciation: "/wʌn/" }, type: "Son" },
+        "year": { meaning: { meaning: "yil", pronunciation: "/jɪər/" }, type: "Ot" },
+        "sold": { meaning: { meaning: "sotdi", pronunciation: "/soʊld/" }, type: "Fe'l" },
+        "books": { meaning: { meaning: "kitoblar", pronunciation: "/bʊks/" }, type: "Ot" },
+        "order": { meaning: { meaning: "buyurtma berish", pronunciation: "/ˈɔːrdər/" }, type: "Fe'l" },
+        "write": { meaning: { meaning: "yozish", pronunciation: "/raɪt/" }, type: "Fe'l" },
+        "reviews": { meaning: { meaning: "sharhlar", pronunciation: "/rɪˈvjuːz/" }, type: "Ot" },
+        "1997": { meaning: { meaning: "1997", pronunciation: "/naɪnˈtiːn ˈnaɪnti ˈsevən/" }, type: "Son" },
+        "selling": { meaning: { meaning: "sotish", pronunciation: "/ˈselɪŋ/" }, type: "Fe'l" },
+        "shares": { meaning: { meaning: "aksiyalar", pronunciation: "/ʃerz/" }, type: "Ot" },
+        "stock": { meaning: { meaning: "fond", pronunciation: "/stɒk/" }, type: "Ot" },
+        "market": { meaning: { meaning: "bozor", pronunciation: "/ˈmɑːrkɪt/" }, type: "Ot" },
+        "2000": { meaning: { meaning: "2000", pronunciation: "/tuː ˈθaʊzənd/" }, type: "Son" },
+        "made": { meaning: { meaning: "ishlab chiqardi / qildi", pronunciation: "/meɪd/" }, type: "Fe'l" },
+        "more": { meaning: { meaning: "ko'proq", pronunciation: "/mɔːr/" }, type: "Sifat" },
+        "than": { meaning: { meaning: "dan", pronunciation: "/ðæn/" }, type: "Bog'lovchi" },
+        "one": { meaning: { meaning: "bir", pronunciation: "/wʌn/" }, type: "Son" },
+        "billion": { meaning: { meaning: "milliard", pronunciation: "/ˈbɪljən/" }, type: "Son" },
+        "dollars": { meaning: { meaning: "dollarlar", pronunciation: "/ˈdɒlərz/" }, type: "Ot" },
+        "kept": { meaning: { meaning: "davom etdi", pronunciation: "/kept/" }, type: "Fe'l" },
+        "growing": { meaning: { meaning: "o'sish", pronunciation: "/ˈɡroʊɪŋ/" }, type: "Fe'l" },
+        "bought": { meaning: { meaning: "sotib oldi", pronunciation: "/bɔːt/" }, type: "Fe'l" },
+        "other": { meaning: { meaning: "boshqa", pronunciation: "/ˈʌðər/" }, type: "Sifat" },
+        "allowed": { meaning: { meaning: "ruxsat berdi", pronunciation: "/əˈlaʊd/" }, type: "Fe'l" },
+        "them": { meaning: { meaning: "ularga", pronunciation: "/ðem/" }, type: "Olmosh" },
+        "device": { meaning: { meaning: "qurilma", pronunciation: "/dɪˈvaɪs/" }, type: "Ot" },
+        "Kindle": { meaning: { meaning: "Kindle", pronunciation: "/ˈkɪndl/" }, type: "Ot" },
+        "eBook": { meaning: { meaning: "elektron kitob", pronunciation: "/ˈiːbʊk/" }, type: "Ot" },
+        "reader": { meaning: { meaning: "o'quvchi", pronunciation: "/ˈriːdər/" }, type: "Ot" },
+        "2011": { meaning: { meaning: "2011", pronunciation: "/tuː ˈθaʊzənd ɪˈlevən/" }, type: "Son" },
+        "Fire": { meaning: { meaning: "Fire", pronunciation: "/ˈfaɪər/" }, type: "Ot" },
+        "Later": { meaning: { meaning: "keyinroq", pronunciation: "/ˈleɪtər/" }, type: "Ravish" },
+        "music": { meaning: { meaning: "musiqa", pronunciation: "/ˈmjuːzɪk/" }, type: "Ot" },
+        "videos": { meaning: { meaning: "videolar", pronunciation: "/ˈvɪdioʊz/" }, type: "Ot" },
+        "online": { meaning: { meaning: "onlayn", pronunciation: "/ˈɒnlaɪn/" }, type: "Ravish" },
+        "Customers": { meaning: { meaning: "mijozlar", pronunciation: "/ˈkʌstəmərz/" }, type: "Ot" },
+        "store": { meaning: { meaning: "saqlash", pronunciation: "/stɔːr/" }, type: "Fe'l" },
+        "purchases": { meaning: { meaning: "xaridlar", pronunciation: "/ˈpɜːrtʃəsɪz/" }, type: "Ot" },
+        "private": { meaning: { meaning: "shaxsiy", pronunciation: "/ˈpraɪvət/" }, type: "Sifat" },
+        "download": { meaning: { meaning: "yuklab olish", pronunciation: "/ˈdaʊnloʊd/" }, type: "Fe'l" },
+        "anytime": { meaning: { meaning: "istalgan vaqtda", pronunciation: "/ˈeniˌtaɪm/" }, type: "Ravish" },
+        "Now": { meaning: { meaning: "hozir", pronunciation: "/naʊ/" }, type: "Ravish" },
+        "serves": { meaning: { meaning: "xizmat ko'rsatadi", pronunciation: "/sɜːrvz/" }, type: "Fe'l" },
+        "every": { meaning: { meaning: "har", pronunciation: "/ˈevri/" }, type: "Sifat" },
+        "day": { meaning: { meaning: "kun", pronunciation: "/deɪ/" }, type: "Ot" },
+        "34": { meaning: { meaning: "34", pronunciation: "/ˈθɜːrti fɔːr/" }, type: "Son" },
+        "successful": { meaning: { meaning: "muvaffaqiyatli", pronunciation: "/səkˈsesfəl/" }, type: "Sifat" },
+        "reasons": { meaning: { meaning: "sabablar", pronunciation: "/ˈriːznz/" }, type: "Ot" },
+        "One": { meaning: { meaning: "bir", pronunciation: "/wʌn/" }, type: "Son" },
+        "reason": { meaning: { meaning: "sabab", pronunciation: "/ˈriːzn/" }, type: "Ot" },
+        "He": { meaning: { meaning: "u (erkak)", pronunciation: "/hiː/" }, type: "Olmosh" },
+        "takes": { meaning: { meaning: "oladi", pronunciation: "/teɪks/" }, type: "Fe'l" },
+        "risks": { meaning: { meaning: "tavakkallar", pronunciation: "/rɪsks/" }, type: "Ot" },
+        "big": { meaning: { meaning: "katta", pronunciation: "/bɪɡ/" }, type: "Sifat" },
+        "ideas": { meaning: { meaning: "g'oyalar", pronunciation: "/aɪˈdiːəz/" }, type: "Ot" },
+        "helps": { meaning: { meaning: "yordam beradi", pronunciation: "/helps/" }, type: "Fe'l" },
+        "find": { meaning: { meaning: "topish", pronunciation: "/faɪnd/" }, type: "Fe'l" },
+        "what": { meaning: { meaning: "nima", pronunciation: "/wɒt/" }, type: "Olmosh" },
+        "like": { meaning: { meaning: "yoqtirish", pronunciation: "/laɪk/" }, type: "Fe'l" },
+        "Even": { meaning: { meaning: "hatto", pronunciation: "/ˈiːvən/" }, type: "Ravish" },
+        "though": { meaning: { meaning: "ga qaramay", pronunciation: "/ðoʊ/" }, type: "Bog'lovchi" },
+        "store": { meaning: { meaning: "do'kon", pronunciation: "/stɔːr/" }, type: "Ot" },
+        "criticize": { meaning: { meaning: "tanqid qilish", pronunciation: "/ˈkrɪtɪsaɪz/" }, type: "Fe'l" },
+        "too": { meaning: { meaning: "juda", pronunciation: "/tuː/" }, type: "Ravish" },
+        "powerful": { meaning: { meaning: "kuchli", pronunciation: "/ˈpaʊərfəl/" }, type: "Sifat" },
+        "Others": { meaning: { meaning: "boshqalar", pronunciation: "/ˈʌðərz/" }, type: "Olmosh" },
+        "workers": { meaning: { meaning: "ishchilar", pronunciation: "/ˈwɜːrkərz/" }, type: "Ot" },
+        "warehouses": { meaning: { meaning: "omborlar", pronunciation: "/ˈwerˌhaʊzɪz/" }, type: "Ot" },
+        "bad": { meaning: { meaning: "yomon", pronunciation: "/bæd/" }, type: "Sifat" },
+        "conditions": { meaning: { meaning: "sharoitlar", pronunciation: "/kənˈdɪʃənz/" }, type: "Ot" },
+        "large": { meaning: { meaning: "katta", pronunciation: "/lɑːrdʒ/" }, type: "Sifat" },
+        "low": { meaning: { meaning: "arzon", pronunciation: "/loʊ/" }, type: "Sifat" },
+        "prices": { meaning: { meaning: "narxlar", pronunciation: "/ˈpraɪsɪz/" }, type: "Ot" },
+        "delivers": { meaning: { meaning: "yetkazib beradi", pronunciation: "/dɪˈlɪvərz/" }, type: "Fe'l" },
+        "quickly": { meaning: { meaning: "tez", pronunciation: "/ˈkwɪkli/" }, type: "Ravish" },
+        "Interesting": { meaning: { meaning: "qiziqarli", pronunciation: "/ˈɪntrəstɪŋ/" }, type: "Sifat" },
+        "facts": { meaning: { meaning: "faktlar", pronunciation: "/fækts/" }, type: "Ot" },
+        "chose": { meaning: { meaning: "tanladi", pronunciation: "/tʃoʊz/" }, type: "Fe'l" },
+        "name": { meaning: { meaning: "nom", pronunciation: "/neɪm/" }, type: "Ot" },
+        "Cadabra": { meaning: { meaning: "Cadabra", pronunciation: "/kəˈdæbrə/" }, type: "Ot" },
+        "like": { meaning: { meaning: "kabi", pronunciation: "/laɪk/" }, type: "Predlog" },
+        "Abracadabra": { meaning: { meaning: "Abracadabra", pronunciation: "/ˌæbrəkəˈdæbrə/" }, type: "Ot" },
+        "Later": { meaning: { meaning: "keyinroq", pronunciation: "/ˈleɪtər/" }, type: "Ravish" },
+        "changed": { meaning: { meaning: "o'zgartirdi", pronunciation: "/tʃeɪndʒd/" }, type: "Fe'l" },
+        "sounded": { meaning: { meaning: "eshitildi", pronunciation: "/ˈsaʊndɪd/" }, type: "Fe'l" },
+        "stronger": { meaning: { meaning: "kuchliroq", pronunciation: "/ˈstrɒŋɡər/" }, type: "Sifat" },
+        "also": { meaning: { meaning: "ham", pronunciation: "/ˈɔːlsoʊ/" }, type: "Ravish" },
+        "wanted": { meaning: { meaning: "xohladi", pronunciation: "/ˈwɒntɪd/" }, type: "Fe'l" },
+        "starting": { meaning: { meaning: "boshlanadigan", pronunciation: "/ˈstɑːrtɪŋ/" }, type: "Fe'l" },
+        "lists": { meaning: { meaning: "ro'yxatlar", pronunciation: "/lɪsts/" }, type: "Ot" },
+        "used": { meaning: { meaning: "foydalangan", pronunciation: "/juːzd/" }, type: "Fe'l" },
+        "bell": { meaning: { meaning: "qo'ng'iroq", pronunciation: "/bel/" }, type: "Ot" },
+        "signal": { meaning: { meaning: "signal berish", pronunciation: "/ˈsɪɡnəl/" }, type: "Fe'l" },
+        "each": { meaning: { meaning: "har bir", pronunciation: "/iːtʃ/" }, type: "Sifat" },
+        "purchase": { meaning: { meaning: "xarid", pronunciation: "/ˈpɜːrtʃəs/" }, type: "Ot" },
+        "orders": { meaning: { meaning: "buyurtmalar", pronunciation: "/ˈɔːrdərz/" }, type: "Ot" },
+        "came": { meaning: { meaning: "keldi", pronunciation: "/keɪm/" }, type: "Fe'l" },
+        "often": { meaning: { meaning: "tez-tez", pronunciation: "/ˈɒfən/" }, type: "Ravish" },
+        "stopped": { meaning: { meaning: "to'xtatdi", pronunciation: "/stɒpt/" }, type: "Fe'l" },
+        "earnamount": { meaning: { meaning: "daromad oldi", pronunciation: "/ɜːrn/" }, type: "Fe'l" },
+        "almost": { meaning: { meaning: "deyarli", pronunciation: "/ˈɔːlmoʊst/" }, type: "Ravish" },
+        "10": { meaning: { meaning: "10", pronunciation: "/ten/" }, type: "Son" },
+        "focused": { meaning: { meaning: "e'tibor qaratdi", pronunciation: "/ˈfoʊkəst/" }, type: "Fe'l" },
+        "more": { meaning: { meaning: "ko'proq", pronunciation: "/mɔːr/" }, type: "Sifat" },
+        "175": { meaning: { meaning: "175", pronunciation: "/wʌn ˈhʌndrəd ˈsevənti faɪv/" }, type: "Son" },
+        "around": { meaning: { meaning: "atrofida", pronunciation: "/əˈraʊnd/" }, type: "Predlog" },
+        "Some": { meaning: { meaning: "ba'zilari", pronunciation: "/sʌm/" }, type: "Sifat" },
+        "larger": { meaning: { meaning: "kattaroq", pronunciation: "/ˈlɑːrdʒər/" }, type: "Sifat" },
+        "28": { meaning: { meaning: "28", pronunciation: "/ˈtwenti eɪt/" }, type: "Son" },
+        "football": { meaning: { meaning: "futbol", pronunciation: "/ˈfʊtbɔːl/" }, type: "Ot" },
+        "fields": { meaning: { meaning: "maydonlar", pronunciation: "/fiːldz/" }, type: "Ot" },
+        "together": { meaning: { meaning: "birga", pronunciation: "/təˈɡeðər/" }, type: "Ravish" },
+        "the": { meaning: { meaning: "aniq artikl", pronunciation: "/ðə, ðɪ/" }, type: "Artikl" },
+        "a": { meaning: { meaning: "noaniq artikl", pronunciation: "/ə, eɪ/" }, type: "Artikl" },
+        "an": { meaning: { meaning: "noaniq artikl", pronunciation: "/ən, æn/" }, type: "Artikl" },
+        "is": { meaning: { meaning: "bo'lmoq", pronunciation: "/ɪz/" }, type: "Fe'l" },
+        "it": { meaning: { meaning: "u", pronunciation: "/ɪt/" }, type: "Olmosh" },
+        "has": { meaning: { meaning: "ega", pronunciation: "/hæz/" }, type: "Fe'l" },
+        "and": { meaning: { meaning: "va", pronunciation: "/ænd/" }, type: "Bog'lovchi" },
+        "its": { meaning: { meaning: "uning", pronunciation: "/ɪts/" }, type: "Olmosh" },
+        "can": { meaning: { meaning: "mumkin", pronunciation: "/kæn/" }, type: "Modal fe'l" },
+        "their": { meaning: { meaning: "ularning", pronunciation: "/ðer/" }, type: "Olmosh" },
+        "in": { meaning: { meaning: "ichida", pronunciation: "/ɪn/" }, type: "Predlog" },
+        "to": { meaning: { meaning: "ga", pronunciation: "/tuː/" }, type: "Predlog" },
+        "from": { meaning: { meaning: "dan", pronunciation: "/frɒm/" }, type: "Predlog" },
+        "by": { meaning: { meaning: "tomonidan", pronunciation: "/baɪ/" }, type: "Predlog" },
+        "for": { meaning: { meaning: "uchun", pronunciation: "/fɔːr/" }, type: "Predlog" },
+        "or": { meaning: { meaning: "yoki", pronunciation: "/ɔːr/" }, type: "Bog'lovchi" },
+        "also": { meaning: { meaning: "ham", pronunciation: "/ˈɔːlsoʊ/" }, type: "Ravish" },
+        "Later": { meaning: { meaning: "keyinroq", pronunciation: "/ˈleɪtər/" }, type: "Ravish" },
+        "Now": { meaning: { meaning: "hozir", pronunciation: "/naʊ/" }, type: "Ravish" },
+        "He": { meaning: { meaning: "u (erkak)", pronunciation: "/hiː/" }, type: "Olmosh" },
+        "his": { meaning: { meaning: "uning (erkak)", pronunciation: "/hɪz/" }, type: "Olmosh" },
+        "some": { meaning: { meaning: "ba'zi", pronunciation: "/sʌm/" }, type: "Sifat" },
+        "but": { meaning: { meaning: "ammo", pronunciation: "/bʌt/" }, type: "Bog'lovchi" },
+        "at": { meaning: { meaning: "da", pronunciation: "/æt/" }, type: "Predlog" },
+        "did": { meaning: { meaning: "qilmadi (o'tgan zamon)", pronunciation: "/dɪd/" }, type: "Yordamchi fe'l" },
+        "not": { meaning: { meaning: "emas", pronunciation: "/nɒt/" }, type: "Ravish" },
+        "earn": { meaning: { meaning: "daromad olish", pronunciation: "/ɜːrn/" }, type: "Fe'l" },
+        "focused": { meaning: { meaning: "e'tibor qaratdi", pronunciation: "/ˈfoʊkəst/" }, type: "Fe'l" }
+    };
+        const originalEnglishTextContentHTML = englishTextContainer.innerHTML;
+
+    function wrapWordsAndAddButtons(targetElement) {
+        if (targetElement !== englishTextContainer) return;
+
+        let tempDiv = document.createElement('div');
+        tempDiv.innerHTML = targetElement.innerHTML;
+
+        tempDiv.querySelectorAll('p').forEach(pElement => {
+            let paragraphContent = pElement.innerHTML;
+            const sentences = paragraphContent.match(/[^.!?]+(?:[.!?]|$)/g) || [];
+
+            let finalParagraphHtml = [];
+            let lastPosition = 0;
+
+            sentences.forEach(sentenceText => {
+                const sentenceTrimmed = sentenceText.trim();
+                const sentenceStartIndex = paragraphContent.indexOf(sentenceTrimmed, lastPosition);
+
+                if (sentenceStartIndex > lastPosition) {
+                    finalParagraphHtml.push(paragraphContent.substring(lastPosition, sentenceStartIndex));
+                }
+
+                const wrappedSentence = sentenceTrimmed.replace(/(\b[A-Za-z'-]+\b)/g, '<span class="word-span">$1</span>');
+                finalParagraphHtml.push(wrappedSentence);
+
+                finalParagraphHtml.push(` <button class="read-sentence-button" data-sentence="${encodeURIComponent(sentenceTrimmed)}">▶</button>`);
+
+                lastPosition = sentenceStartIndex + sentenceTrimmed.length;
+            });
+
+            if (lastPosition < paragraphContent.length) {
+                finalParagraphHtml.push(paragraphContent.substring(lastPosition));
+            }
+
+            pElement.innerHTML = finalParagraphHtml.join('');
+        });
+        targetElement.innerHTML = tempDiv.innerHTML;
+    }
+
+    function handleSentenceRead(sentenceToRead, sentenceElement) {
+        if (responsiveVoice.isPlaying()) {
+            responsiveVoice.cancel();
+            removeHighlight();
+        }
+
+        const wordsInSentence = Array.from(sentenceElement.querySelectorAll('.word-span'));
+
+        responsiveVoice.speak(sentenceToRead, "US English Male", {
+            rate: 0.8,
+            onword: (word, index, sentenceText) => {
+                removeHighlight();
+
+                let foundHighlight = false;
+                for (let i = 0; i < wordsInSentence.length; i++) {
+                    const spanText = wordsInSentence[i].textContent.trim().toLowerCase().replace(/[^a-z0-9]/g, '');
+                    const spokenWord = word.toLowerCase().replace(/[^a-z0-9]/g, '');
+
+                    if (spanText === spokenWord) {
+                        wordsInSentence[i].classList.add('highlight');
+                        wordsInSentence[i].scrollIntoView({ behavior: 'smooth', block: 'center' });
+                        foundHighlight = true;
+                        break;
+                    }
+                }
+                if (!foundHighlight) {
+                    for (let i = 0; i < wordsInSentence.length; i++) {
+                        const spanText = wordsInSentence[i].textContent.trim().toLowerCase().replace(/[^a-z0-9]/g, '');
+                        const spokenWord = word.toLowerCase().replace(/[^a-z0-9]/g, '');
+                        if (spokenWord.includes(spanText) || spanText.includes(spokenWord)) {
+                            wordsInSentence[i].classList.add('highlight');
+                            wordsInSentence[i].scrollIntoView({ behavior: 'smooth', block: 'center' });
+                            break;
+                        }
+                    }
+                }
+            },
+            onend: () => {
+                removeHighlight();
+            }
+        });
+        console.log("Gap o'qilmoqda: " + sentenceToRead);
+    }
+
+    function removeHighlight() {
+        document.querySelectorAll('.word-span.highlight').forEach(span => {
+            span.classList.remove('highlight');
+        });
+    }
+
+    function getSentenceFromWord(wordElement) {
+        let parentParagraph = wordElement.closest('p');
+        if (!parentParagraph) return null;
+
+        let fullText = parentParagraph.textContent;
+        let sentences = fullText.match(/[^.!?]+(?:[.!?]|$)/g) || [fullText];
+
+        for (let i = 0; i < sentences.length; i++) {
+            let sentence = sentences[i].trim();
+            const regex = new RegExp(`\\b${wordElement.textContent.trim().replace(/[^a-zA-Z'-]/g, '')}\\b`, 'i');
+            if (regex.test(sentence)) {
+                return sentence;
+            }
+        }
+        return null;
+    }
+
+    textContent.addEventListener('mousedown', (event) => {
+        if (currentLang === 'en' && event.target.tagName === 'SPAN' && event.target.classList.contains('word-span')) {
+            isDragging = false;
+            startX = event.clientX;
+            startY = event.clientY;
+            draggedElement = event.target;
+        }
+    });
+
+    textContent.addEventListener('mousemove', (event) => {
+        if (currentLang === 'en' && draggedElement && !isDragging) {
+            const dx = event.clientX - startX;
+            const dy = event.clientY - startY;
+            if (dx > DRAG_THRESHOLD && Math.abs(dy) < DRAG_THRESHOLD * 2) {
+                isDragging = true;
+            }
+        }
+    });
+
+    textContent.addEventListener('mouseup', (event) => {
+        if (currentLang === 'uz') {
+            return;
+        }
+
+        if (isDragging && draggedElement === event.target) {
+            const dx = event.clientX - startX;
+            if (dx > DRAG_THRESHOLD) {
+                console.log("O'ngga surish tugadi, gap o'qiladi!");
+                const sentence = getSentenceFromWord(event.target);
+                if (sentence) {
+                    handleSentenceRead(sentence, event.target.closest('p'));
+                } else {
+                    console.warn("Gap topilmadi (O'ngga surish).");
+                }
+            }
+            isDragging = false;
+            draggedElement = null;
+            return;
+        }
+
+        if (event.target.tagName === 'SPAN' && event.target.classList.contains('word-span')) {
+            const currentWordTextRaw = event.target.textContent.trim();
+
+            const normalizeWord = (word) => word.toLowerCase().replace(/[^a-z0-9'-]/g, '');
+
+            const normalizedWord = normalizeWord(currentWordTextRaw);
+
+            let foundData = null;
+            for (const key in wordData) {
+                if (normalizeWord(key) === normalizedWord) {
+                    foundData = wordData[key];
+                    break;
+                }
+            }
+
+            if (foundData && foundData.meaning) {
+                modalOriginalWord.textContent = currentWordTextRaw;
+                modalPronunciation.textContent = `Talaffuzi: ${foundData.meaning.pronunciation}`;
+                modalTranslation.textContent = `Tarjimasi: ${foundData.meaning.meaning}`;
+                modalWordType.textContent = `So'z turi: ${foundData.type}`;
+            } else {
+                modalOriginalWord.textContent = currentWordTextRaw;
+                modalPronunciation.textContent = "Talaffuzi topilmadi.";
+                modalTranslation.textContent = "Tarjima topilmadi.";
+                modalWordType.textContent = "So'z turi topilmadi.";
+            }
+            modal.style.display = "block";
+            console.log("Tarjima va ma'lumotlar ko'rsatildi (qisqa bosish): " + currentWordTextRaw);
+        } else if (event.target.classList.contains('read-sentence-button')) {
+            const encodedSentence = event.target.dataset.sentence;
+            const sentenceToRead = decodeURIComponent(encodedSentence);
+            const parentParagraph = event.target.closest('p');
+            handleSentenceRead(sentenceToRead, parentParagraph);
+        }
+
+        isDragging = false;
+        draggedElement = null;
+    });
+
+    textContent.addEventListener('mouseleave', () => {
+        isDragging = false;
+        draggedElement = null;
+        console.log("Mouse left, drag states reset.");
+    });
+
+    closeButton.addEventListener('click', () => {
+        modal.style.display = "none";
+        if (responsiveVoice.isPlaying()) {
+            responsiveVoice.cancel();
+            removeHighlight();
+        }
+    });
+
+    window.addEventListener('click', (event) => {
+        if (event.target === modal) {
+            modal.style.display = "none";
+            if (responsiveVoice.isPlaying()) {
+                responsiveVoice.cancel();
+                removeHighlight();
+            }
+        }
+    });
+
+    toggleLangButton.addEventListener('click', () => {
+        if (currentLang === 'en') {
+            englishTextContainer.style.display = 'none';
+            uzbekTextContainer.style.display = 'block';
+            toggleLangButton.textContent = 'Inglizchaga o\'girish';
+            currentLang = 'uz';
+            responsiveVoice.cancel();
+            removeHighlight();
+        } else {
+            englishTextContainer.style.display = 'block';
+            uzbekTextContainer.style.display = 'none';
+            toggleLangButton.textContent = 'O\'zbekchaga o\'girish';
+            currentLang = 'en';
+            englishTextContainer.innerHTML = originalEnglishTextContentHTML;
+            wrapWordsAndAddButtons(englishTextContainer);
+        }
+    });
+
+    wrapWordsAndAddButtons(englishTextContainer);
+</script>
+
+</body>
+</html>
