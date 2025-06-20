@@ -34,7 +34,7 @@ function setupOptionButtons() {
 
     // Story option - goes to [lesson]gram.html
     option3Btn.onclick = function() {
-        redirectToLesson(`${selectedLesson}gram.html`);
+        redirectToLesson(`${selectedLesson}gramm.html`);
     };
 
     // Reading option - goes to [lesson]read.html
