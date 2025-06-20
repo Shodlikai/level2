@@ -32,7 +32,7 @@ function setupOptionButtons() {
         redirectToLesson(`index-${selectedLesson}.html`);
     };
 
-    // Story option - goes to [lesson]story.html
+    // Story option - goes to [lesson]gram.html
     option3Btn.onclick = function() {
         redirectToLesson(`${selectedLesson}gram.html`);
     };
