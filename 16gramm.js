@@ -3,16 +3,33 @@ document.addEventListener('DOMContentLoaded', function() {
     // Helper function for checking text input
     function checkTextInput(inputElement, feedbackElement) {
         // Convert to lowercase and remove extra spaces for robust comparison
-        const userAnswer = inputElement.value.trim().toLowerCase().replace(/\s+/g, ' ').replace(/\.$/, ''); // Remove trailing dot
-        const correctAnswer = inputElement.dataset.answer.toLowerCase().replace(/\s+/g, ' ').replace(/\.$/, ''); // Remove trailing dot
+        const userAnswer = inputElement.value.trim().toLowerCase().replace(/\s+/g, ' ').replace(/\.$/, '').replace(/\?$/, '');
+        const correctAnswer = inputElement.dataset.answer.toLowerCase().replace(/\s+/g, ' ').replace(/\.$/, '').replace(/\?$/, '');
 
-        // Special handling for "Have ... eaten" type answers
+        // Special handling for "had ... risen" or "Had ... visited" type answers
         if (correctAnswer.includes('...')) {
-            const parts = correctAnswer.split('...');
-            const firstPartCorrect = userAnswer.startsWith(parts[0].trim());
-            const secondPartCorrect = userAnswer.endsWith(parts[1].trim());
+            const parts = correctAnswer.split('...').map(p => p.trim());
+            const userWords = userAnswer.split(/\s+/);
 
-            if (firstPartCorrect && secondPartCorrect) {
+            let isCorrect = false;
+            if (userWords.length >= 2) {
+                // Check if the first part matches
+                const firstPartMatches = userWords[0] === parts[0];
+                // Check if the last part matches (accounting for potential middle words)
+                const lastPartMatches = userWords[userWords.length - 1] === parts[1];
+
+                // If it's a "had ... V3" structure, need to be more precise
+                if (parts[0] === 'had' || parts[0] === 'has' || parts[0] === 'have') {
+                    if (firstPartMatches && userWords[userWords.length -1] === parts[1]) {
+                        isCorrect = true;
+                    }
+                } else if (firstPartMatches && lastPartMatches) {
+                     isCorrect = true;
+                }
+            }
+
+
+            if (isCorrect) {
                 feedbackElement.textContent = 'To\'g\'ri!';
                 feedbackElement.className = 'feedback correct';
             } else {
