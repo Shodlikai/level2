@@ -39,7 +39,7 @@ let words = [
   { english: "merge", uzbek: "birlashtirmoq, burlashmoq", type: "fe'l", pronunciation: "/mə:rdʒ/" },
   { english: "steer", uzbek: "rulni boshqarmoq, yetaklamoq", type: "fe'l", pronunciation: "/stiə/" },
   { english: "lightweight", uzbek: "yengil vazn", type: "sifat", pronunciation: "/'lait-weet/" },
-  { english: "hybrid", uzbek: "gibrid, chashma", type: "ot", pronunciation: "/'haibrid/" },
+  { english: "hybrid", uzbek: "gibrid, chatishma", type: "ot", pronunciation: "/'haibrid/" },
   { english: "jungle", uzbek: "changalzor, chang'illikzor", type: "ot", pronunciation: "/'dʒʌŋgl/" },
   { english: "pond", uzbek: "hovuz, havza", type: "ot", pronunciation: "/pɑnd/" }
 ];

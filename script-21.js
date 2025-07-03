@@ -26,8 +26,8 @@ const words = [
   { word: "merge", pronunciation: "mə:rdʒ", translation: "birlashtirmoq, burlashmoq" },
   { word: "steer", pronunciation: "stiə", translation: "rulni boshqarmoq, yetaklamoq" },
   { word: "lightweight", pronunciation: "'lait-weet", translation: "yengil vazn" },
-  { word: "hybrid", pronunciation: "'haibrid", translation: "gibrid, chashma" },
-  { word: "jungle", pronunciation: "'dʒʌŋgl", translation: "changalzor, chang'illikzor" },
+  { word: "hybrid", pronunciation: "'haibrid", translation: "gibrid, chatishma" },
+  { word: "jungle", pronunciation: "'dʒʌŋgl", translation: "changalzor, chakallakzor" },
   { word: "pond", pronunciation: "pɑnd", translation: "hovuz, havza" }
 ];
 
