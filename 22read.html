@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>AMAZON.COM - DUNYODAGI ENG KATTA INTERNET KOMPANIYASI</title>
+    <script src="https://code.responsivevoice.org/responsivevoice.js?key=ftro4Sxr"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-radius: 8px;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin-bottom: 20px;
+            border-radius: 4px;
+        }
+        .text-content p {
+            margin: 0 0 15px 0;
+            text-align: justify;
+        }
+        .text-content span.word-span {
+            cursor: pointer;
+            border-bottom: 1px dotted #007bff;
+            transition: color 0.3s ease, background-color 0.3s ease;
+            line-height: 2;
+        }
+        .text-content span.word-span:hover {
+            color: #0056b3;
+        }
+        .text-content span.word-span.highlight {
+            background-color: yellow;
+            color: black;
+            font-weight: bold;
+            border-bottom: 1px solid transparent;
+        }
+        .read-sentence-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background-color: #333;
+            color: white;
+            font-size: 12px;
+            font-weight: bold;
+            cursor: pointer;
+            border: none;
+            outline: none;
+            margin-left: 5px;
+            vertical-align: middle;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+            transition: background-color 0.2s ease, transform 0.1s ease;
+            flex-shrink: 0;
+        }
+        .read-sentence-button:hover {
+            background-color: #000;
+            transform: scale(1.05);
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0; top: 0;
+            width: 100%; height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.4);
+        }
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 25px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 400px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            text-align: center;
+            position: relative;
+        }
+        .close-button {
+            color: #aaa;
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .close-button:hover,
+        .close-button:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        #modal-original-word {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        #modal-pronunciation {
+            font-size: 1.1em;
+            color: #555;
+            margin-bottom: 10px;
+            font-style: italic;
+        }
+        #modal-translation {
+            font-size: 1.3em;
+            color: #007bff;
+            margin-bottom: 10px;
+        }
+        #modal-word-type {
+            font-size: 1em;
+            color: #777;
+            background-color: #e0e0e0;
+            padding: 5px 10px;
+            border-radius: 5px;
+            display: inline-block;
+        }
+        .translate-button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .translate-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <img id="dynamic-image" src="https://image.pollinations.ai/prompt/Himalay%20Montayn" alt="Himalay togʻi" />
+
+    <div class="text-content" id="main-text">
+        <div class="english-text-container">
+<p>The Himalayas are very high mountains. They are in Asia. They are in Nepal, India, Pakistan, Tibet, and Bhutan.</p>
+<p>These mountains are the highest in the world. Some are almost 9,000 meters tall. The Himalayas are between India and the middle part of Asia. The name "Himalaya" means "home of snow."</p>
+<p>There are 14 very tall mountains in the Himalayas. They are over 8,000 meters high. Some of them are K2, Nanga Parbat, and Mount Everest. Mount Everest is 8,848 meters high. It is the tallest mountain in the world.</p>
+<p>The Himalayas are very long. They are 2,400 kilometers from west to east. They are between 100 and 250 kilometers wide.</p>
+<p>Many people think the mountains are holy. Hindu and Buddhist people go there to pray. These people come from nearby places.</p>
+<p><strong>How the Himalayas were made</strong></p>
+<p>The Himalayas are young mountains. They started forming a long time ago. The land of India moved north. It hit Asia. This made the mountains. This started 70 million years ago. It is still happening. The mountains grow taller every year. They move about 7 centimeters each year. There are also earthquakes and volcanoes in the area.</p>
+<p><strong>Rivers and Lakes</strong></p>
+<p>There is a lot of snow in the high parts of the Himalayas. The snow turns into water. This water makes rivers. The Indus River flows west. It goes through Pakistan into the Arabian Sea. The Ganges and Brahmaputra rivers flow east. They meet in Bangladesh. They make the biggest delta in the world.</p>
+<p><strong>Climate</strong></p>
+<p>There are many kinds of weather in the Himalayas. The lower parts in the south are warm and wet. Tea and tropical plants grow there. Trees can grow up to 4,000 meters high. People grow wheat and other crops in the higher areas.</p>
+<p>The Himalayas change the weather in India and Tibet. The monsoon winds from the Indian Ocean bring rain. It rains a lot on the Indian side. But Tibet is dry because the mountains block the rain.</p>
+<p><strong>People</strong></p>
+<p>Not many people live in the Himalayas. The weather is very cold and hard. Most people live on the lower parts in India. Some people work as sherpas. Sherpas help tourists and climbers go up the mountains.</p>
+<p>The mountains are like a big wall. They stopped people from China and other parts of Asia from coming into India. A long time ago, a man named Genghis Khan wanted to go south. But the mountains stopped him.</p>
+<p>There are some mountain passes, but they are very high. Many are over 5,000 meters. In winter, they are full of snow. People cannot cross them easily.</p>
+<p><strong>Tourism</strong></p>
+<p>Many tourists come to the Himalayas. They want to climb the mountains. This started over 100 years ago. In 1953, two men reached the top of Mount Everest. Their names were Edmund Hillary and Tenzing Norgay. Tenzing Norgay was a Sherpa.</p>
+</div>
+<div class="uzbek-text-container" style="display:none;">
+<p>Himolaylar juda baland togʻlardir. Ular Osiyoda, yaʼni Nepal, Hindiston, Pokiston, Tibet va Butanda joylashgan.</p>
+<p>Bu togʻlar dunyodagi eng baland togʻlardir. Baʼzilari deyarli 9 000 metr balandlikda. Himolaylar Hindiston bilan Osiyoning markaziy qismi orasida joylashgan. “Himalaya” soʻzi “qor uyi” degan maʼnoni anglatadi.</p>
+<p>Himolaylarda 8 000 metrdan baland 14 ta togʻ mavjud. Ular orasida K2, Nanga Parbat va Everest bor. Everest 8 848 metr balandlikda. Bu dunyodagi eng baland togʻ hisoblanadi.</p>
+<p>Himolaylar juda uzun. Ular gʻarbdan sharqqa 2 400 kilometr. Eni esa 100 dan 250 kilometrgacha.</p>
+<p>Koʻplab odamlar bu togʻlarni muqaddas deb hisoblaydi. Hindu va buddistlar bu yerga ibodat qilish uchun kelishadi. Ular yaqin atrofdagi joylardan kelishadi.</p>
+<p><strong>Himolaylar qanday yaratilgan</strong></p>
+<p>Himolaylar yosh togʻlardir. Ular juda qadimda shakllana boshlagan. Hindiston qitʼasi shimolga harakatlanib, Osiyoga urilgan. Natijada togʻlar paydo boʻlgan. Bu taxminan 70 million yil oldin boshlangan va hanuzgacha davom etmoqda. Har yili Himolaylar balandlashib boradi. Har yili ular 7 sm ga koʻtariladi. Bu hududda zilzilalar va vulqonlar ham uchraydi.</p>
+<p><strong>Daryolar va Koʻllar</strong></p>
+<p>Himolaylarning baland qismlarida koʻp qor bor. Bu qor suvga aylanadi va daryolarni hosil qiladi. Ind daryosi gʻarbga oqadi, Pokiston orqali Arab dengiziga boradi. Gang va Brahmaputra daryolari sharqqa oqadi. Ular Bangladeshda uchrashadi va dunyodagi eng katta deltani hosil qiladi.</p>
+<p><strong>Iqlim</strong></p>
+<p>Himolaylarda turli xil iqlimlar mavjud. Janubdagi pastroq hududlar iliq va nam. Bu yerda choy va tropik oʻsimliklar oʻsadi. Daraxtlar 4 000 metr balandlikkacha oʻsishi mumkin. Yuqoriroq hududlarda bugʻdoy va boshqa ekinlar yetishtiriladi.</p>
+<p>Himolaylar Hindiston va Tibet iqlimiga taʼsir qiladi. Hind okeanidan esadigan musson shamollari Hindistonga koʻp yogʻin keltiradi. Lekin Tibet quruq, chunki togʻlar yomgʻirni toʻsib qoʻyadi.</p>
+<p><strong>Odamlar</strong></p>
+<p>Himolaylarda koʻp odam yashamaydi. Ob-havo sovuq va ogʻir. Koʻpchilik pastki hududlarda yashaydi. Ayrimlar sherpa boʻlib ishlaydi. Sherpalar sayyohlar va togʻchi sayohatchilarga yordam beradi.</p>
+<p>Togʻlar katta devorga oʻxshaydi. Ular Xitoy va boshqa Osiyo hududlaridan Hindistonga kirishni toʻxtatgan. Qadimda Chingizxon janubga yurmoqchi boʻlgan, lekin togʻlar uni toʻxtatgan.</p>
+<p>Baʼzi togʻ dovonlari mavjud, lekin ular juda baland. Aksariyati 5 000 metrdan yuqori. Qishda ular qor bilan toʻlib ketadi. Odamlar ularni oson bosib oʻta olmaydi.</p>
+<p><strong>Turizm</strong></p>
+<p>Koʻplab sayyohlar Himolaylarga kelishadi. Ular togʻlarga chiqishni xohlashadi. Bu 100 yildan oshiq vaqt oldin boshlangan. 1953 yilda ikki kishi Everest tepasiga chiqqan. Ularning ismlari Edmund Xillari va Tenzing Norgay edi. Tenzing Norgay sherpa boʻlgan.</p>
+</div>
+</div>
+
+    <button class="translate-button" id="toggle-lang-button">O'zbekchaga o'girish</button>
+</div>
+
+<div id="myModal" class="modal">
+    <div class="modal-content">
+        <span class="close-button">&times;</span>
+        <div id="modal-original-word"></div>
+        <div id="modal-pronunciation"></div>
+        <div id="modal-translation"></div>
+        <div id="modal-word-type"></div>
+    </div>
+</div>
+<script>
+    const textContent = document.getElementById('main-text');
+    const englishTextContainer = document.querySelector('.english-text-container');
+    const uzbekTextContainer = document.querySelector('.uzbek-text-container');
+    const modal = document.getElementById('myModal');
+    const closeButton = document.querySelector('.close-button');
+    const modalOriginalWord = document.getElementById('modal-original-word');
+    const modalPronunciation = document.getElementById('modal-pronunciation');
+    const modalTranslation = document.getElementById('modal-translation');
+    const modalWordType = document.getElementById('modal-word-type');
+    const toggleLangButton = document.getElementById('toggle-lang-button');
+    let currentLang = 'en';
+
+    let isDragging = false;
+    let startX = 0;
+    let startY = 0;
+    let draggedElement = null;
+    const DRAG_THRESHOLD = 20;
+
+    // To'liq lug'at: barcha matndagi so'zlarni qamrab olgan, kichik so'zlar, predloglar va boshqalar bilan
+    
+const wordData = {
+  "a": { meaning: { meaning: "bir (maqola)", pronunciation: "/ə/" }, type: "Artikel" },
+  "about": { meaning: { meaning: "haqida", pronunciation: "/əˈbaʊt/" }, type: "Predlog" },
+  "ago": { meaning: { meaning: "oldin", pronunciation: "/əˈɡoʊ/" }, type: "Zarf" },
+  "almost": { meaning: { meaning: "deyarli", pronunciation: "/ˈɔːl.moʊst/" }, type: "Zarf" },
+  "also": { meaning: { meaning: "shuningdek", pronunciation: "/ˈɔːl.soʊ/" }, type: "Zarf" },
+  "and": { meaning: { meaning: "va", pronunciation: "/ænd/" }, type: "Bog‘lovchi" },
+  "arabian": { meaning: { meaning: "arab", pronunciation: "/əˈreɪ.bi.ən/" }, type: "Sifat" },
+  "are": { meaning: { meaning: "(ular/ siz) ...", pronunciation: "/ɑːr/" }, type: "Fe’l (to be)" },
+  "area": { meaning: { meaning: "hudud", pronunciation: "/ˈeə.ri.ə/" }, type: "Ot" },
+  "areas": { meaning: { meaning: "hududlar", pronunciation: "/ˈeə.ri.əz/" }, type: "Ot" },
+  "as": { meaning: { meaning: "sifatida", pronunciation: "/æz/" }, type: "Predlog/Zarf" },
+  "asia": { meaning: { meaning: "Osiyo", pronunciation: "/ˈeɪ.ʒə/" }, type: "Ot" },
+  "bangladesh": { meaning: { meaning: "Bangladesh", pronunciation: "/ˌbæŋ.ɡləˈdeʃ/" }, type: "Ot" },
+  "because": { meaning: { meaning: "chunki", pronunciation: "/bɪˈkɔːz/" }, type: "Bog‘lovchi" },
+  "between": { meaning: { meaning: "orasida", pronunciation: "/bɪˈtwiːn/" }, type: "Predlog" },
+  "bhutan": { meaning: { meaning: "Butan", pronunciation: "/buːˈtɑːn/" }, type: "Ot" },
+  "big": { meaning: { meaning: "katta", pronunciation: "/bɪɡ/" }, type: "Sifat" },
+  "biggest": { meaning: { meaning: "eng katta", pronunciation: "/ˈbɪɡ.ɪst/" }, type: "Sifat (daraja)" },
+  "block": { meaning: { meaning: "to‘smoq", pronunciation: "/blɒk/" }, type: "Fe’l" },
+  "brahmaputra": { meaning: { meaning: "Brahmaputra (daryo)", pronunciation: "/ˌbrɑː.məˈpuː.trə/" }, type: "Ot" },
+  "bring": { meaning: { meaning: "olib kelmoq", pronunciation: "/brɪŋ/" }, type: "Fe’l" },
+  "buddhist": { meaning: { meaning: "buddist", pronunciation: "/ˈbʊd.ɪst/" }, type: "Ot/Sifat" },
+  "but": { meaning: { meaning: "lekin", pronunciation: "/bʌt/" }, type: "Bog‘lovchi" },
+  "cannot": { meaning: { meaning: "eplay olmaydi", pronunciation: "/ˈkæn.ɒt/" }, type: "Fe’l (modal)" },
+  "centimeters": { meaning: { meaning: "santimetrlar", pronunciation: "/ˈsen.tɪ.miː.təz/" }, type: "Ot" },
+  "change": { meaning: { meaning: "oʻzgartirmoq", pronunciation: "/tʃeɪndʒ/" }, type: "Fe’l" },
+  "china": { meaning: { meaning: "Xitoy", pronunciation: "/ˈtʃaɪ.nə/" }, type: "Ot" },
+  "climb": { meaning: { meaning: "chiqmoq", pronunciation: "/klaɪm/" }, type: "Fe’l" },
+  "climbers": { meaning: { meaning: "togʻchi/sayohatchi", pronunciation: "/ˈklaɪ.mərz/" }, type: "Ot" },
+  "cold": { meaning: { meaning: "sovuq", pronunciation: "/koʊld/" }, type: "Sifat" },
+  "come": { meaning: { meaning: "kelmoq", pronunciation: "/kʌm/" }, type: "Fe’l" },
+  "coming": { meaning: { meaning: "kelayotgan", pronunciation: "/ˈkʌm.ɪŋ/" }, type: "Fe’l (hozirgi zamon)" },
+  "crops": { meaning: { meaning: "ekinlar", pronunciation: "/krɒps/" }, type: "Ot" },
+  "cross": { meaning: { meaning: "kesib oʻtmoq", pronunciation: "/krɒs/" }, type: "Fe’l" },
+  "delta": { meaning: { meaning: "delta", pronunciation: "/ˈdɛl.tə/" }, type: "Ot" },
+  "dry": { meaning: { meaning: "quruq", pronunciation: "/draɪ/" }, type: "Sifat" },
+  "east": { meaning: { meaning: "sharq", pronunciation: "/iːst/" }, type: "Ot/Sifat" },
+  "earthquakes": { meaning: { meaning: "zilzilalar", pronunciation: "/ˈɜːθ.kweɪks/" }, type: "Ot" },
+  "edmund": { meaning: { meaning: "Edmund (ism)", pronunciation: "/ˈɛd.mənd/" }, type: "Ot (ism)" },
+  "easily": { meaning: { meaning: "osonlik bilan", pronunciation: "/ˈiː.zəl.i/" }, type: "Zarf" },
+  "everest": { meaning: { meaning: "Everest (togʻ)", pronunciation: "/ˈev.ər.ɪst/" }, type: "Ot" },
+  "every": { meaning: { meaning: "har bir", pronunciation: "/ˈev.ri/" }, type: "Aniqlovchi" },
+  "faith": { meaning: { meaning: "e’tiqod", pronunciation: "/feɪθ/" }, type: "Ot" },
+  "feels": { meaning: { meaning: "hiss qiladi", pronunciation: "/fiːlz/" }, type: "Fe’l" },
+  "few": { meaning: { meaning: "oz", pronunciation: "/fjuː/" }, type: "Son/aniqlovchi" },
+  "flow": { meaning: { meaning: "oqmoq", pronunciation: "/floʊ/" }, type: "Fe’l" },
+  "flows": { meaning: { meaning: "oqadi", pronunciation: "/floʊz/" }, type: "Fe’l (hozirgi zamon)" },
+  "form": { meaning: { meaning: "shakllantirmoq", pronunciation: "/fɔːrm/" }, type: "Fe’l" },
+  "forming": { meaning: { meaning: "shakllanayotgan", pronunciation: "/ˈfɔː.mɪŋ/" }, type: "Fe’l" },
+  "full": { meaning: { meaning: "toʻla", pronunciation: "/fʊl/" }, type: "Sifat" },
+  "from": { meaning: { meaning: "dan", pronunciation: "/frʌm/" }, type: "Predlog" },
+  "full": { meaning: { meaning: "to‘la", pronunciation: "/fʊl/" }, type: "Sifat" },
+  "ganges": { meaning: { meaning: "Gang daryosi", pronunciation: "/ˈɡæn.dʒiːz/" }, type: "Ot" },
+  "genghis": { meaning: { meaning: "Chingiz (xon)", pronunciation: "/ˈɡɛŋ.ɡɪs/" }, type: "Ot (ism)" },
+  "go": { meaning: { meaning: "bormoq", pronunciation: "/ɡoʊ/" }, type: "Fe’l" },
+  "grow": { meaning: { meaning: "oʻsmoq", pronunciation: "/ɡroʊ/" }, type: "Fe’l" },
+  "hard": { meaning: { meaning: "qiyin/qattiq", pronunciation: "/hɑːrd/" }, type: "Sifat" },
+  "has": { meaning: { meaning: "bor (unda)", pronunciation: "/hæz/" }, type: "Fe’l (to have)" },
+  "have": { meaning: { meaning: "bor boʻlish", pronunciation: "/hæv/" }, type: "Fe’l" },
+  "he": { meaning: { meaning: "u (erkak)", pronunciation: "/hiː/" }, type: "Olmosh" },
+  "help": { meaning: { meaning: "yordam bermoq", pronunciation: "/hɛlp/" }, type: "Fe’l" },
+  "high": { meaning: { meaning: "baland", pronunciation: "/haɪ/" }, type: "Sifat" },
+  "highest": { meaning: { meaning: "eng baland", pronunciation: "/ˈhaɪ.ɪst/" }, type: "Sifat (daraja)" },
+  "hillary": { meaning: { meaning: "Hillari (ism)", pronunciation: "/ˈhɪl.əri/" }, type: "Ot (ism)" },
+  "him": { meaning: { meaning: "uni (erkak)", pronunciation: "/hɪm/" }, type: "Olmosh" },
+  "hit": { meaning: { meaning: "urmoq", pronunciation: "/hɪt/" }, type: "Fe’l" },
+  "holy": { meaning: { meaning: "muqaddas", pronunciation: "/ˈhoʊ.li/" }, type: "Sifat" },
+  "home": { meaning: { meaning: "uy", pronunciation: "/hoʊm/" }, type: "Ot" },
+  "how": { meaning: { meaning: "qanday", pronunciation: "/haʊ/" }, type: "Savol so‘zi" },
+  "hundred": { meaning: { meaning: "yuz", pronunciation: "/ˈhʌn.drəd/" }, type: "Son" },
+  "if": { meaning: { meaning: "agar", pronunciation: "/ɪf/" }, type: "Bog‘lovchi" },
+  "in": { meaning: { meaning: "ichida", pronunciation: "/ɪn/" }, type: "Predlog" },
+  "indian": { meaning: { meaning: "hind", pronunciation: "/ˈɪn.di.ən/" }, type: "Sifat/Ot" },
+  "indus": { meaning: { meaning: "Ind daryosi", pronunciation: "/ˈɪn.dəs/" }, type: "Ot" },
+  "into": { meaning: { meaning: "...ga ichiga", pronunciation: "/ˈɪn.tuː/" }, type: "Predlog" },
+  "is": { meaning: { meaning: "bu", pronunciation: "/ɪz/" }, type: "Fe’l (to be)" },
+  "it": { meaning: { meaning: "bu (narsaga)", pronunciation: "/ɪt/" }, type: "Olmosh" },
+  "its": { meaning: { meaning: "uning", pronunciation: "/ɪts/" }, type: "Olmosh (egalik)" },
+  "k2": { meaning: { meaning: "K2 (togʻ)", pronunciation: "/ˌkeɪ ˈtuː/" }, type: "Ot" },
+  "kilometers": { meaning: { meaning: "kilometrlar", pronunciation: "/kɪˈlɒ.mɪ.təz/" }, type: "Ot" },
+  "land": { meaning: { meaning: "yer", pronunciation: "/lænd/" }, type: "Ot" },
+  "lake": { meaning: { meaning: "ko‘l", pronunciation: "/leɪk/" }, type: "Ot" },
+  "lakes": { meaning: { meaning: "ko‘llar", pronunciation: "/leɪks/" }, type: "Ot" },
+  "like": { meaning: { meaning: "...ga o‘xshash", pronunciation: "/laɪk/" }, type: "Fe’l/Predlog" },
+  "live": { meaning: { meaning: "yashamoq", pronunciation: "/lɪv/" }, type: "Fe’l" },
+  "long": { meaning: { meaning: "uzun", pronunciation: "/lɒŋ/" }, type: "Sifat" },
+  "lower": { meaning: { meaning: "pastroq", pronunciation: "/ˈləʊ.ər/" }, type: "Sifat" },
+  "man": { meaning: { meaning: "erkak", pronunciation: "/mæn/" }, type: "Ot" },
+  "many": { meaning: { meaning: "ko‘p", pronunciation: "/ˈmɛni/" }, type: "Son/Olmosh" },
+  "made": { meaning: { meaning: "yaratilgan", pronunciation: "/meɪd/" }, type: "Fe’l (o‘tmish)" },
+  "makes": { meaning: { meaning: "yaratadi", pronunciation: "/meɪks/" }, type: "Fe’l" },
+  "meet": { meaning: { meaning: "uchrashmoq", pronunciation: "/miːt/" }, type: "Fe’l" },
+  "meters": { meaning: { meaning: "metrlar", pronunciation: "/ˈmiː.təz/" }, type: "Ot" },
+  "middle": { meaning: { meaning: "o‘rta", pronunciation: "/ˈmɪd.əl/" }, type: "Sifat/Ot" },
+  "million": { meaning: { meaning: "million", pronunciation: "/ˈmɪl.jən/" }, type: "Son" },
+  "monsoon": { meaning: { meaning: "musson", pronunciation: "/ˌmɒnˈsuːn/" }, type: "Ot" },
+  "more": { meaning: { meaning: "ko‘proq", pronunciation: "/mɔːr/" }, type: "Zarf" },
+  "most": { meaning: { meaning: "eng", pronunciation: "/moʊst/" }, type: "Zarf" },
+  "mount": { meaning: { meaning: "tog‘ (Everest kabi nomlarda)", pronunciation: "/maʊnt/" }, type: "Ot" },
+  "mountain": { meaning: { meaning: "togʻ", pronunciation: "/ˈmaʊntən/" }, type: "Ot" },
+  "mountains": { meaning: { meaning: "togʻlar", pronunciation: "/ˈmaʊntənz/" }, type: "Ot" },
+  "move": { meaning: { meaning: "harakatlanmoq", pronunciation: "/muːv/" }, type: "Fe’l" },
+  "moved": { meaning: { meaning: "harakatlandi", pronunciation: "/muːvd/" }, type: "Fe’l (o‘tmish)" },
+  "much": { meaning: { meaning: "ko‘p", pronunciation: "/mʌtʃ/" }, type: "Olmosh/Zarf" },
+  "muslim": { meaning: { meaning: "musulmon", pronunciation: "/ˈmʊz.lɪm/" }, type: "Ot" },
+  "name": { meaning: { meaning: "ism, nom", pronunciation: "/neɪm/" }, type: "Ot" },
+  "named": { meaning: { meaning: "nomlangan", pronunciation: "/neɪmd/" }, type: "Fe’l (o‘tmish)" },
+  "nanga": { meaning: { meaning: "Nanga (tog‘ nomi)", pronunciation: "/ˈnɑːŋ.ɡə/" }, type: "Ot" },
+  "nearby": { meaning: { meaning: "yaqin atrofdagi", pronunciation: "/ˌnɪəˈbaɪ/" }, type: "Sifat/Zarf" },
+  "nepal": { meaning: { meaning: "Nepal", pronunciation: "/nɛˈpɔːl/" }, type: "Ot" },
+  "north": { meaning: { meaning: "shimol", pronunciation: "/nɔːθ/" }, type: "Ot/Sifat/Zarf" },
+  "norgay": { meaning: { meaning: "Norgay (ism)", pronunciation: "/ˈnɔːr.ɡeɪ/" }, type: "Ot (ism)" },
+  "not": { meaning: { meaning: "emas", pronunciation: "/nɒt/" }, type: "Inkorn so‘zi" },
+  "now": { meaning: { meaning: "hozir", pronunciation: "/naʊ/" }, type: "Zarf" },
+  "ocean": { meaning: { meaning: "okean", pronunciation: "/ˈəʊ.ʃən/" }, type: "Ot" },
+  "of": { meaning: { meaning: "...ning", pronunciation: "/əv/" }, type: "Predlog" },
+  "on": { meaning: { meaning: "...da", pronunciation: "/ɒn/" }, type: "Predlog" },
+  "only": { meaning: { meaning: "faqat", pronunciation: "/ˈəʊn.li/" }, type: "Zarf/Sifat" },
+  "other": { meaning: { meaning: "boshqa", pronunciation: "/ˈʌð.ər/" }, type: "Sifat" },
+  "over": { meaning: { meaning: "...dan ortiq", pronunciation: "/ˈəʊ.vər/" }, type: "Predlog" },
+  "pakistan": { meaning: { meaning: "Pokiston", pronunciation: "/ˌpæk.ɪˈstɑːn/" }, type: "Ot" },
+  "parbat": { meaning: { meaning: "Parbat (togʻ nomi)", pronunciation: "/ˈpɑːr.bət/" }, type: "Ot" },
+  "passes": { meaning: { meaning: "dovonlar", pronunciation: "/ˈpɑː.sɪz/" }, type: "Ot" },
+  "parts": { meaning: { meaning: "qismlar", pronunciation: "/pɑːts/" }, type: "Ot" },
+  "people": { meaning: { meaning: "odamlar", pronunciation: "/ˈpiː.pl/" }, type: "Ot" },
+  "plants": { meaning: { meaning: "o‘simliklar", pronunciation: "/plɑːnts/" }, type: "Ot" },
+  "pray": { meaning: { meaning: "ibodat qilmoq", pronunciation: "/preɪ/" }, type: "Fe’l" },
+  "rain": { meaning: { meaning: "yomg‘ir", pronunciation: "/reɪn/" }, type: "Ot/Fe’l" },
+  "reached": { meaning: { meaning: "yetib bordi", pronunciation: "/riːtʃt/" }, type: "Fe’l (o‘tmish)" },
+  "rains": { meaning: { meaning: "yogʻingarchilik bo‘ladi", pronunciation: "/reɪnz/" }, type: "Fe’l" },
+  "rivers": { meaning: { meaning: "daryolar", pronunciation: "/ˈrɪv.əz/" }, type: "Ot" },
+  "said": { meaning: { meaning: "aytdi", pronunciation: "/sɛd/" }, type: "Fe’l (o‘tmish)" },
+  "same": { meaning: { meaning: "bir xil", pronunciation: "/seɪm/" }, type: "Sifat" },
+  "sea": { meaning: { meaning: "dengiz", pronunciation: "/siː/" }, type: "Ot" },
+  "sherpa": { meaning: { meaning: "sherpa (tog‘ gid)", pronunciation: "/ˈʃɜː.pə/" }, type: "Ot" },
+  "sherpas": { meaning: { meaning: "sherpalar", pronunciation: "/ˈʃɜː.pəz/" }, type: "Ot" },
+  "short": { meaning: { meaning: "qisqa", pronunciation: "/ʃɔːt/" }, type: "Sifat" },
+  "side": { meaning: { meaning: "tomon", pronunciation: "/saɪd/" }, type: "Ot" },
+  "snow": { meaning: { meaning: "qor", pronunciation: "/snoʊ/" }, type: "Ot" },
+  "some": { meaning: { meaning: "baʼzi", pronunciation: "/sʌm/" }, type: "Olmosh" },
+  "south": { meaning: { meaning: "janub", pronunciation: "/saʊθ/" }, type: "Ot/Sifat/Zarf" },
+  "started": { meaning: { meaning: "boshladi", pronunciation: "/ˈstɑː.tɪd/" }, type: "Fe’l (o‘tmish)" },
+  "still": { meaning: { meaning: "hali ham", pronunciation: "/stɪl/" }, type: "Zarf" },
+  "stopped": { meaning: { meaning: "to‘xtatdi", pronunciation: "/stɒpt/" }, type: "Fe’l (o‘tmish)" },
+  "such": { meaning: { meaning: "shunday", pronunciation: "/sʌtʃ/" }, type: "Olmosh" },
+  "tall": { meaning: { meaning: "baland", pronunciation: "/tɔːl/" }, type: "Sifat" },
+  "taller": { meaning: { meaning: "yanada balandroq", pronunciation: "/ˈtɔː.lər/" }, type: "Sifat (taqqoslovchi)" },
+  "tea": { meaning: { meaning: "choy", pronunciation: "/tiː/" }, type: "Ot" },
+  "tells": { meaning: { meaning: "aytadi", pronunciation: "/telz/" }, type: "Fe’l" },
+  "tenzing": { meaning: { meaning: "Tenzing (ism)", pronunciation: "/ˈten.zɪŋ/" }, type: "Ot (ism)" },
+  "that": { meaning: { meaning: "u, o'sha", pronunciation: "/ðæt/" }, type: "Olmosh/Bog‘lovchi" },
+  "the": { meaning: { meaning: "bu/o‘sha (maqola)", pronunciation: "/ðə/" }, type: "Artikel" },
+  "their": { meaning: { meaning: "ularning", pronunciation: "/ðeər/" }, type: "Olmosh" },
+  "them": { meaning: { meaning: "ularni", pronunciation: "/ðəm/" }, type: "Olmosh" },
+  "there": { meaning: { meaning: "u yerda", pronunciation: "/ðeər/" }, type: "Olmosh/Zarf" },
+  "they": { meaning: { meaning: "ular", pronunciation: "/ðeɪ/" }, type: "Olmosh" },
+  "think": { meaning: { meaning: "o‘ylamoq", pronunciation: "/θɪŋk/" }, type: "Fe’l" },
+  "this": { meaning: { meaning: "bu", pronunciation: "/ðɪs/" }, type: "Olmosh" },
+  "through": { meaning: { meaning: "orqali", pronunciation: "/θruː/" }, type: "Predlog" },
+  "time": { meaning: { meaning: "vaqt", pronunciation: "/taɪm/" }, type: "Ot" },
+  "to": { meaning: { meaning: "...ga", pronunciation: "/tuː/" }, type: "Predlog" },
+  "together": { meaning: { meaning: "birga", pronunciation: "/təˈɡeð.ər/" }, type: "Zarf" },
+  "told": { meaning: { meaning: "aytdi", pronunciation: "/təʊld/" }, type: "Fe’l (o‘tmish)" },
+  "top": { meaning: { meaning: "cho‘qqi", pronunciation: "/tɒp/" }, type: "Ot" },
+  "tourism": { meaning: { meaning: "turizm", pronunciation: "/ˈtʊə.rɪ.zəm/" }, type: "Ot" },
+  "tourists": { meaning: { meaning: "sayyohlar", pronunciation: "/ˈtʊə.rɪsts/" }, type: "Ot" },
+  "trees": { meaning: { meaning: "daraxtlar", pronunciation: "/triːz/" }, type: "Ot" },
+  "tropical": { meaning: { meaning: "tropik", pronunciation: "/ˈtrɒp.ɪ.kəl/" }, type: "Sifat" },
+  "turns": { meaning: { meaning: "aylanadi", pronunciation: "/tɜːnz/" }, type: "Fe’l" },
+  "two": { meaning: { meaning: "ikki", pronunciation: "/tuː/" }, type: "Son" },
+  "up": { meaning: { meaning: "yuqoriga", pronunciation: "/ʌp/" }, type: "Zarf" },
+  "very": { meaning: { meaning: "juda", pronunciation: "/ˈver.i/" }, type: "Zarf" },
+  "volcanoes": { meaning: { meaning: "vulqonlar", pronunciation: "/vɒlˈkeɪ.nəʊz/" }, type: "Ot" },
+  "want": { meaning: { meaning: "xohlamoq", pronunciation: "/wɒnt/" }, type: "Fe’l" },
+  "was": { meaning: { meaning: "edi", pronunciation: "/wɒz/" }, type: "Fe’l (to be)" },
+  "water": { meaning: { meaning: "suv", pronunciation: "/ˈwɔː.tər/" }, type: "Ot" },
+  "weather": { meaning: { meaning: "ob-havo", pronunciation: "/ˈwɛð.ər/" }, type: "Ot" },
+  "wheat": { meaning: { meaning: "bug‘doy", pronunciation: "/wiːt/" }, type: "Ot" },
+  "when": { meaning: { meaning: "qachon", pronunciation: "/wen/" }, type: "Savol so‘zi" },
+  "where": { meaning: { meaning: "qayerda", pronunciation: "/weər/" }, type: "Savol so‘zi" },
+  "which": { meaning: { meaning: "qaysi", pronunciation: "/wɪtʃ/" }, type: "Savol olmoshi" },
+  "wide": { meaning: { meaning: "keng", pronunciation: "/waɪd/" }, type: "Sifat" },
+  "winds": { meaning: { meaning: "shamollar", pronunciation: "/wɪndz/" }, type: "Ot" },
+  "winter": { meaning: { meaning: "qish", pronunciation: "/ˈwɪn.tər/" }, type: "Ot" },
+  "with": { meaning: { meaning: "bilan", pronunciation: "/wɪð/" }, type: "Predlog" },
+  "work": { meaning: { meaning: "ishlamoq", pronunciation: "/wɜːk/" }, type: "Fe’l" },
+  "world": { meaning: { meaning: "dunyo", pronunciation: "/wɜːld/" }, type: "Ot" },
+  "years": { meaning: { meaning: "yillar", pronunciation: "/jɪəz/" }, type: "Ot" },
+  "young": { meaning: { meaning: "yosh", pronunciation: "/jʌŋ/" }, type: "Sifat" },
+    "Himalayas": { meaning: { meaning: "Himolay togʻlari", pronunciation: "/ˌhɪməˈleɪəz/" }, type: "Ot" },
+    "mountains": { meaning: { meaning: "togʻlar", pronunciation: "/ˈmaʊntənz/" }, type: "Ot" },
+    "Asia": { meaning: { meaning: "Osiyo", pronunciation: "/ˈeɪʒə/" }, type: "Ot" },
+    "Nepal": { meaning: { meaning: "Nepal", pronunciation: "/nɛˈpɔːl/" }, type: "Ot" },
+    "India": { meaning: { meaning: "Hindiston", pronunciation: "/ˈɪndiə/" }, type: "Ot" },
+    "Pakistan": { meaning: { meaning: "Pokiston", pronunciation: "/ˌpækɪˈstɑːn/" }, type: "Ot" },
+    "Tibet": { meaning: { meaning: "Tibet", pronunciation: "/tɪˈbɛt/" }, type: "Ot" },
+    "Bhutan": { meaning: { meaning: "Butan", pronunciation: "/buːˈtɑːn/" }, type: "Ot" },
+    "Everest": { meaning: { meaning: "Everest", pronunciation: "/ˈɛvərɪst/" }, type: "Ot" },
+    "Sherpa": { meaning: { meaning: "Sherpa", pronunciation: "/ˈʃɜːrpə/" }, type: "Ot" },
+    "snow": { meaning: { meaning: "qor", pronunciation: "/snoʊ/" }, type: "Ot" },
+    "river": { meaning: { meaning: "daryo", pronunciation: "/ˈrɪvər/" }, type: "Ot" },
+    "tourists": { meaning: { meaning: "sayyohlar", pronunciation: "/ˈtʊərɪsts/" }, type: "Ot" }
+};
+
+        const originalEnglishTextContentHTML = englishTextContainer.innerHTML;
+
+    function wrapWordsAndAddButtons(targetElement) {
+        if (targetElement !== englishTextContainer) return;
+
+        let tempDiv = document.createElement('div');
+        tempDiv.innerHTML = targetElement.innerHTML;
+
+        tempDiv.querySelectorAll('p').forEach(pElement => {
+            let paragraphContent = pElement.innerHTML;
+            const sentences = paragraphContent.match(/[^.!?]+(?:[.!?]|$)/g) || [];
+
+            let finalParagraphHtml = [];
+            let lastPosition = 0;
+
+            sentences.forEach(sentenceText => {
+                const sentenceTrimmed = sentenceText.trim();
+                const sentenceStartIndex = paragraphContent.indexOf(sentenceTrimmed, lastPosition);
+
+                if (sentenceStartIndex > lastPosition) {
+                    finalParagraphHtml.push(paragraphContent.substring(lastPosition, sentenceStartIndex));
+                }
+
+                const wrappedSentence = sentenceTrimmed.replace(/(\b[A-Za-z'-]+\b)/g, '<span class="word-span">$1</span>');
+                finalParagraphHtml.push(wrappedSentence);
+
+                finalParagraphHtml.push(` <button class="read-sentence-button" data-sentence="${encodeURIComponent(sentenceTrimmed)}">▶</button>`);
+
+                lastPosition = sentenceStartIndex + sentenceTrimmed.length;
+            });
+
+            if (lastPosition < paragraphContent.length) {
+                finalParagraphHtml.push(paragraphContent.substring(lastPosition));
+            }
+
+            pElement.innerHTML = finalParagraphHtml.join('');
+        });
+        targetElement.innerHTML = tempDiv.innerHTML;
+    }
+
+    function handleSentenceRead(sentenceToRead, sentenceElement) {
+        if (responsiveVoice.isPlaying()) {
+            responsiveVoice.cancel();
+            removeHighlight();
+        }
+
+        const wordsInSentence = Array.from(sentenceElement.querySelectorAll('.word-span'));
+
+        responsiveVoice.speak(sentenceToRead, "US English Male", {
+            rate: 0.8,
+            onword: (word, index, sentenceText) => {
+                removeHighlight();
+
+                let foundHighlight = false;
+                for (let i = 0; i < wordsInSentence.length; i++) {
+                    const spanText = wordsInSentence[i].textContent.trim().toLowerCase().replace(/[^a-z0-9]/g, '');
+                    const spokenWord = word.toLowerCase().replace(/[^a-z0-9]/g, '');
+
+                    if (spanText === spokenWord) {
+                        wordsInSentence[i].classList.add('highlight');
+                        wordsInSentence[i].scrollIntoView({ behavior: 'smooth', block: 'center' });
+                        foundHighlight = true;
+                        break;
+                    }
+                }
+                if (!foundHighlight) {
+                    for (let i = 0; i < wordsInSentence.length; i++) {
+                        const spanText = wordsInSentence[i].textContent.trim().toLowerCase().replace(/[^a-z0-9]/g, '');
+                        const spokenWord = word.toLowerCase().replace(/[^a-z0-9]/g, '');
+                        if (spokenWord.includes(spanText) || spanText.includes(spokenWord)) {
+                            wordsInSentence[i].classList.add('highlight');
+                            wordsInSentence[i].scrollIntoView({ behavior: 'smooth', block: 'center' });
+                            break;
+                        }
+                    }
+                }
+            },
+            onend: () => {
+                removeHighlight();
+            }
+        });
+        console.log("Gap o'qilmoqda: " + sentenceToRead);
+    }
+
+    function removeHighlight() {
+        document.querySelectorAll('.word-span.highlight').forEach(span => {
+            span.classList.remove('highlight');
+        });
+    }
+
+    function getSentenceFromWord(wordElement) {
+        let parentParagraph = wordElement.closest('p');
+        if (!parentParagraph) return null;
+
+        let fullText = parentParagraph.textContent;
+        let sentences = fullText.match(/[^.!?]+(?:[.!?]|$)/g) || [fullText];
+
+        for (let i = 0; i < sentences.length; i++) {
+            let sentence = sentences[i].trim();
+            const regex = new RegExp(`\\b${wordElement.textContent.trim().replace(/[^a-zA-Z'-]/g, '')}\\b`, 'i');
+            if (regex.test(sentence)) {
+                return sentence;
+            }
+        }
+        return null;
+    }
+
+    textContent.addEventListener('mousedown', (event) => {
+        if (currentLang === 'en' && event.target.tagName === 'SPAN' && event.target.classList.contains('word-span')) {
+            isDragging = false;
+            startX = event.clientX;
+            startY = event.clientY;
+            draggedElement = event.target;
+        }
+    });
+
+    textContent.addEventListener('mousemove', (event) => {
+        if (currentLang === 'en' && draggedElement && !isDragging) {
+            const dx = event.clientX - startX;
+            const dy = event.clientY - startY;
+            if (dx > DRAG_THRESHOLD && Math.abs(dy) < DRAG_THRESHOLD * 2) {
+                isDragging = true;
+            }
+        }
+    });
+
+    textContent.addEventListener('mouseup', (event) => {
+        if (currentLang === 'uz') {
+            return;
+        }
+
+        if (isDragging && draggedElement === event.target) {
+            const dx = event.clientX - startX;
+            if (dx > DRAG_THRESHOLD) {
+                console.log("O'ngga surish tugadi, gap o'qiladi!");
+                const sentence = getSentenceFromWord(event.target);
+                if (sentence) {
+                    handleSentenceRead(sentence, event.target.closest('p'));
+                } else {
+                    console.warn("Gap topilmadi (O'ngga surish).");
+                }
+            }
+            isDragging = false;
+            draggedElement = null;
+            return;
+        }
+
+        if (event.target.tagName === 'SPAN' && event.target.classList.contains('word-span')) {
+            const currentWordTextRaw = event.target.textContent.trim();
+
+            const normalizeWord = (word) => word.toLowerCase().replace(/[^a-z0-9'-]/g, '');
+
+            const normalizedWord = normalizeWord(currentWordTextRaw);
+
+            let foundData = null;
+            for (const key in wordData) {
+                if (normalizeWord(key) === normalizedWord) {
+                    foundData = wordData[key];
+                    break;
+                }
+            }
+
+            if (foundData && foundData.meaning) {
+                modalOriginalWord.textContent = currentWordTextRaw;
+                modalPronunciation.textContent = `Talaffuzi: ${foundData.meaning.pronunciation}`;
+                modalTranslation.textContent = `Tarjimasi: ${foundData.meaning.meaning}`;
+                modalWordType.textContent = `So'z turi: ${foundData.type}`;
+            } else {
+                modalOriginalWord.textContent = currentWordTextRaw;
+                modalPronunciation.textContent = "Talaffuzi topilmadi.";
+                modalTranslation.textContent = "Tarjima topilmadi.";
+                modalWordType.textContent = "So'z turi topilmadi.";
+            }
+            modal.style.display = "block";
+            console.log("Tarjima va ma'lumotlar ko'rsatildi (qisqa bosish): " + currentWordTextRaw);
+        } else if (event.target.classList.contains('read-sentence-button')) {
+            const encodedSentence = event.target.dataset.sentence;
+            const sentenceToRead = decodeURIComponent(encodedSentence);
+            const parentParagraph = event.target.closest('p');
+            handleSentenceRead(sentenceToRead, parentParagraph);
+        }
+
+        isDragging = false;
+        draggedElement = null;
+    });
+
+    textContent.addEventListener('mouseleave', () => {
+        isDragging = false;
+        draggedElement = null;
+        console.log("Mouse left, drag states reset.");
+    });
+
+    closeButton.addEventListener('click', () => {
+        modal.style.display = "none";
+        if (responsiveVoice.isPlaying()) {
+            responsiveVoice.cancel();
+            removeHighlight();
+        }
+    });
+
+    window.addEventListener('click', (event) => {
+        if (event.target === modal) {
+            modal.style.display = "none";
+            if (responsiveVoice.isPlaying()) {
+                responsiveVoice.cancel();
+                removeHighlight();
+            }
+        }
+    });
+
+    toggleLangButton.addEventListener('click', () => {
+        if (currentLang === 'en') {
+            englishTextContainer.style.display = 'none';
+            uzbekTextContainer.style.display = 'block';
+            toggleLangButton.textContent = 'Inglizchaga o\'girish';
+            currentLang = 'uz';
+            responsiveVoice.cancel();
+            removeHighlight();
+        } else {
+            englishTextContainer.style.display = 'block';
+            uzbekTextContainer.style.display = 'none';
+            toggleLangButton.textContent = 'O\'zbekchaga o\'girish';
+            currentLang = 'en';
+            englishTextContainer.innerHTML = originalEnglishTextContentHTML;
+            wrapWordsAndAddButtons(englishTextContainer);
+        }
+    });
+
+    wrapWordsAndAddButtons(englishTextContainer);
+</script>
+
+</body>
+</html>
