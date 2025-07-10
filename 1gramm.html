@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Past Simple - Interaktiv Ta'lim</title>
+</head>
+<body>
+	  <link rel="stylesheet" href="1gramm.css" />
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1>Past Simple Tense</h1>
+            <p>O'tgan zamon - Past Simple ni o'rganamiz</p>
+        </div>
+
+        <!-- Progress Bar -->
+        <div class="progress-container">
+            <div class="progress-bar" id="progressBar">
+                <span class="progress-text">0%</span>
+            </div>
+        </div>
+
+        <!-- Navigation -->
+        <nav class="nav-tabs">
+            <button class="tab-btn active" data-tab="rules">Qoidalar</button>
+            <button class="tab-btn" data-tab="structure">Strukturalar</button>
+            <button class="tab-btn" data-tab="examples">Misollar</button>
+            <button class="tab-btn" data-tab="exercises">Mashqlar</button>
+        </nav>
+
+        <!-- Rules Section -->
+        <div id="rules" class="tab-content active">
+            <div class="card">
+                <h2>Past Simple Qoidalari</h2>
+                
+                <div class="rule-section">
+                    <h3>1. Past Simple nima?</h3>
+                    <p>Past Simple - o'tgan zamonda sodir bo'lgan va tugagan ishlarni ifodalash uchun ishlatiladi.</p>
+                </div>
+
+                <div class="rule-section">
+                    <h3>2. Qachon ishlatiladi?</h3>
+                    <ul>
+                        <li>O'tmishda aniq vaqtda sodir bo'lgan ishlar uchun</li>
+                        <li>O'tmishda takrorlanuvchi ishlar uchun</li>
+                        <li>O'tmishda ketma-ket sodir bo'lgan ishlar uchun</li>
+                    </ul>
+                </div>
+
+                <div class="rule-section">
+                    <h3>3. Vaqt ko'rsatkichlari</h3>
+                    <div class="time-indicators">
+                        <span class="indicator">yesterday</span>
+                        <span class="indicator">last week</span>
+                        <span class="indicator">ago</span>
+                        <span class="indicator">in 2020</span>
+                        <span class="indicator">when</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Structure Section -->
+        <div id="structure" class="tab-content">
+            <div class="card">
+                <h2>Past Simple Strukturalari</h2>
+                
+                <div class="structure-grid">
+                    <!-- Darak gap -->
+                    <div class="structure-card positive">
+                        <h3>Darak gap (+)</h3>
+                        <div class="formula">
+                            <span class="subject">Subject</span> + 
+                            <span class="verb">V2 (Past form)</span> + 
+                            <span class="object">Object</span>
+                        </div>
+                        <div class="examples">
+                            <p><strong>Misol:</strong> I played football yesterday.</p>
+                            <p><strong>Tarjima:</strong> Men kecha futbol o'ynadim.</p>
+                        </div>
+                    </div>
+
+                    <!-- Inkor gap -->
+                    <div class="structure-card negative">
+                        <h3>Inkor gap (-)</h3>
+                        <div class="formula">
+                            <span class="subject">Subject</span> + 
+                            <span class="auxiliary">did not (didn't)</span> + 
+                            <span class="verb">V1 (Base form)</span> + 
+                            <span class="object">Object</span>
+                        </div>
+                        <div class="examples">
+                            <p><strong>Misol:</strong> I didn't play football yesterday.</p>
+                            <p><strong>Tarjima:</strong> Men kecha futbol o'ynamadim.</p>
+                        </div>
+                    </div>
+
+                    <!-- So'roq gap -->
+                    <div class="structure-card question">
+                        <h3>So'roq gap (?)</h3>
+                        <div class="formula">
+                            <span class="auxiliary">Did</span> + 
+                            <span class="subject">Subject</span> + 
+                            <span class="verb">V1 (Base form)</span> + 
+                            <span class="object">Object</span> + ?
+                        </div>
+                        <div class="examples">
+                            <p><strong>Misol:</strong> Did you play football yesterday?</p>
+                            <p><strong>Tarjima:</strong> Sen kecha futbol o'ynadingmi?</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Examples Section -->
+        <div id="examples" class="tab-content">
+            <div class="card">
+                <h2>Misollar</h2>
+                
+                <div class="examples-grid">
+                    <div class="example-category">
+                        <h3>Darak gaplar</h3>
+                        <div class="example-item">
+                            <p class="english">I watched a movie last night.</p>
+                            <p class="uzbek">Men kecha kechqurun film tomosha qildim.</p>
+                        </div>
+                        <div class="example-item">
+                            <p class="english">She visited her grandmother yesterday.</p>
+                            <p class="uzbek">U kecha buvijiga tashrif buyurdi.</p>
+                        </div>
+                        <div class="example-item">
+                            <p class="english">We studied English two hours ago.</p>
+                            <p class="uzbek">Biz ikki soat avval ingliz tilini o'rgandik.</p>
+                        </div>
+                        <div class="example-item">
+                            <p class="english">They played basketball in the park.</p>
+                            <p class="uzbek">Ular parkda basketbol o'ynashdi.</p>
+                        </div>
+                        <div class="example-item">
+                            <p class="english">He worked at the office yesterday.</p>
+                            <p class="uzbek">U kecha ofisda ishladi.</p>
+                        </div>
+                    </div>
+
+                    <div class="example-category">
+                        <h3>Inkor gaplar</h3>
+                        <div class="example-item">
+                            <p class="english">I didn't watch TV yesterday.</p>
+                            <p class="uzbek">Men kecha televizor tomosha qilmadim.</p>
+                        </div>
+                        <div class="example-item">
+                            <p class="english">She didn't come to the party.</p>
+                            <p class="uzbek">U ziyofatga kelmadi.</p>
+                        </div>
+                        <div class="example-item">
+                            <p class="english">We didn't finish our homework.</p>
+                            <p class="uzbek">Biz uy vazifamizni tugatmadik.</p>
+                        </div>
+                        <div class="example-item">
+                            <p class="english">They didn't play football today.</p>
+                            <p class="uzbek">Ular bugun futbol o'ynamadilar.</p>
+                        </div>
+                        <div class="example-item">
+                            <p class="english">He didn't call me last week.</p>
+                            <p class="uzbek">U o'tgan hafta menga qo'ng'iroq qilmadi.</p>
+                        </div>
+                    </div>
+
+                    <div class="example-category">
+                        <h3>So'roq gaplar</h3>
+                        <div class="example-item">
+                            <p class="english">Did you eat breakfast this morning?</p>
+                            <p class="uzbek">Sen bugun ertalab nonushta qildingmi?</p>
+                        </div>
+                        <div class="example-item">
+                            <p class="english">Did she buy a new car?</p>
+                            <p class="uzbek">U yangi mashina sotib oldimi?</p>
+                        </div>
+                        <div class="example-item">
+                            <p class="english">Did they go to the cinema?</p>
+                            <p class="uzbek">Ular kinoteatrga borishdimi?</p>
+                        </div>
+                        <div class="example-item">
+                            <p class="english">Did he finish his work?</p>
+                            <p class="uzbek">U o'z ishini tugatdimi?</p>
+                        </div>
+                        <div class="example-item">
+                            <p class="english">Did we meet before?</p>
+                            <p class="uzbek">Biz avval uchrashdikmi?</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Exercises Section -->
+        <div id="exercises" class="tab-content">
+            <div class="card">
+                <h2>Mashqlar</h2>
+                
+                <div class="exercise-nav">
+                    <button class="exercise-btn active" data-exercise="test">Test</button>
+                    <button class="exercise-btn" data-exercise="fill">Bo'sh joyni to'ldirish</button>
+                    <button class="exercise-btn" data-exercise="translate">Tarjima qilish</button>
+                    <button class="exercise-btn" data-exercise="correct">Xatoni topish</button>
+                    <button class="exercise-btn" data-exercise="order">So'zlarni tartibga solish</button>
+                </div>
+
+                <!-- Test Exercise -->
+                <div id="test" class="exercise-content active">
+                    <h3>Test savollari</h3>
+                    <div class="quiz-container">
+                        <div class="question" data-question="1">
+                            <p>1. I ___ to school yesterday.</p>
+                            <div class="options">
+                                <label><input type="radio" name="q1" value="a"> a) go</label>
+                                <label><input type="radio" name="q1" value="b"> b) went</label>
+                                <label><input type="radio" name="q1" value="c"> c) going</label>
+                            </div>
+                        </div>
+
+                        <div class="question" data-question="2">
+                            <p>2. She ___ watch TV last night.</p>
+                            <div class="options">
+                                <label><input type="radio" name="q2" value="a"> a) didn't</label>
+                                <label><input type="radio" name="q2" value="b"> b) don't</label>
+                                <label><input type="radio" name="q2" value="c"> c) doesn't</label>
+                            </div>
+                        </div>
+
+                        <div class="question" data-question="3">
+                            <p>3. ___ you finish your homework?</p>
+                            <div class="options">
+                                <label><input type="radio" name="q3" value="a"> a) Do</label>
+                                <label><input type="radio" name="q3" value="b"> b) Did</label>
+                                <label><input type="radio" name="q3" value="c"> c) Are</label>
+                            </div>
+                        </div>
+
+                        <div class="question" data-question="4">
+                            <p>4. We ___ football in the park yesterday.</p>
+                            <div class="options">
+                                <label><input type="radio" name="q4" value="a"> a) play</label>
+                                <label><input type="radio" name="q4" value="b"> b) played</label>
+                                <label><input type="radio" name="q4" value="c"> c) playing</label>
+                            </div>
+                        </div>
+
+                        <div class="question" data-question="5">
+                            <p>5. They ___ come to the party last week.</p>
+                            <div class="options">
+                                <label><input type="radio" name="q5" value="a"> a) didn't</label>
+                                <label><input type="radio" name="q5" value="b"> b) don't</label>
+                                <label><input type="radio" name="q5" value="c"> c) aren't</label>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="check-btn" onclick="checkTest()">Tekshirish</button>
+                    <div id="testResult" class="result"></div>
+                </div>
+
+                <!-- Fill in the blanks -->
+                <div id="fill" class="exercise-content">
+                    <h3>Bo'sh joyni to'ldiring</h3>
+                    <div class="fill-exercise">
+                        <div class="fill-question">
+                            <p>1. I ___ (go) to the cinema yesterday.</p>
+                            <input type="text" class="fill-input" data-answer="went">
+                        </div>
+                        <div class="fill-question">
+                            <p>2. She ___ (not/eat) breakfast this morning.</p>
+                            <input type="text" class="fill-input" data-answer="didn't eat">
+                        </div>
+                        <div class="fill-question">
+                            <p>3. ___ you ___ (study) English last night?</p>
+                            <input type="text" class="fill-input" data-answer="Did">
+                            <input type="text" class="fill-input" data-answer="study">
+                        </div>
+                        <div class="fill-question">
+                            <p>4. We ___ (play) games at the party.</p>
+                            <input type="text" class="fill-input" data-answer="played">
+                        </div>
+                        <div class="fill-question">
+                            <p>5. They ___ (not/come) to school yesterday.</p>
+                            <input type="text" class="fill-input" data-answer="didn't come">
+                        </div>
+                    </div>
+                    <button class="check-btn" onclick="checkFill()">Tekshirish</button>
+                    <div id="fillResult" class="result"></div>
+                </div>
+
+                <!-- Translation Exercise -->
+                <div id="translate" class="exercise-content">
+                    <h3>Tarjima qiling</h3>
+                    <div class="translate-exercise">
+                        <div class="translate-question">
+                            <p>1. Men kecha kitob o'qidim.</p>
+                            <input type="text" class="translate-input" data-answer="I read a book yesterday">
+                        </div>
+                        <div class="translate-question">
+                            <p>2. U o'tgan hafta ishga bormadi.</p>
+                            <input type="text" class="translate-input" data-answer="He didn't go to work last week">
+                        </div>
+                        <div class="translate-question">
+                            <p>3. Siz kecha kino ko'rdingizmi?</p>
+                            <input type="text" class="translate-input" data-answer="Did you watch a movie yesterday?">
+                        </div>
+                        <div class="translate-question">
+                            <p>4. Biz parkda sayr qildik.</p>
+                            <input type="text" class="translate-input" data-answer="We walked in the park">
+                        </div>
+                        <div class="translate-question">
+                            <p>5. Ular maktabda o'qimadi.</p>
+                            <input type="text" class="translate-input" data-answer="They didn't study at school">
+                        </div>
+                    </div>
+                    <button class="check-btn" onclick="checkTranslation()">Tekshirish</button>
+                    <div id="translateResult" class="result"></div>
+                </div>
+
+                <!-- Find the Error -->
+                <div id="correct" class="exercise-content">
+                    <h3>Xatoni toping va to'g'rilang</h3>
+                    <div class="correct-exercise">
+                        <div class="correct-question">
+                            <p>1. I go to school yesterday.</p>
+                            <input type="text" class="correct-input" data-answer="I went to school yesterday">
+                        </div>
+                        <div class="correct-question">
+                            <p>2. She don't eat breakfast this morning.</p>
+                            <input type="text" class="correct-input" data-answer="She didn't eat breakfast this morning">
+                        </div>
+                        <div class="correct-question">
+                            <p>3. Do you studied English last night?</p>
+                            <input type="text" class="correct-input" data-answer="Did you study English last night?">
+                        </div>
+                        <div class="correct-question">
+                            <p>4. We didn't played football yesterday.</p>
+                            <input type="text" class="correct-input" data-answer="We didn't play football yesterday">
+                        </div>
+                        <div class="correct-question">
+                            <p>5. They doesn't come to the party.</p>
+                            <input type="text" class="correct-input" data-answer="They didn't come to the party">
+                        </div>
+                    </div>
+                    <button class="check-btn" onclick="checkCorrection()">Tekshirish</button>
+                    <div id="correctResult" class="result"></div>
+                </div>
+
+        <!-- Word Order Exercise -->
+                <div id="order" class="exercise-content">
+                    <h3>So'zlarni to'g'ri tartibga soling</h3>
+                    <div class="order-exercise">
+                        <div class="order-question">
+                            <p>1. yesterday / I / watched / TV</p>
+                            <div class="word-container">
+                                <span class="word" draggable="true">yesterday</span>
+                                <span class="word" draggable="true">I</span>
+                                <span class="word" draggable="true">watched</span>
+                                <span class="word" draggable="true">TV</span>
+                            </div>
+                            <div class="drop-zone" data-answer="I watched TV yesterday"></div>
+                        </div>
+
+                        <div class="order-question">
+                            <p>2. didn't / she / come / to / school</p>
+                            <div class="word-container">
+                                <span class="word" draggable="true">didn't</span>
+                                <span class="word" draggable="true">she</span>
+                                <span class="word" draggable="true">come</span>
+                                <span class="word" draggable="true">to</span>
+                                <span class="word" draggable="true">school</span>
+                            </div>
+                            <div class="drop-zone" data-answer="She didn't come to school"></div>
+                        </div>
+
+                        <div class="order-question">
+                            <p>3. did / you / eat / breakfast / ?</p>
+                            <div class="word-container">
+                                <span class="word" draggable="true">did</span>
+                                <span class="word" draggable="true">you</span>
+                                <span class="word" draggable="true">eat</span>
+                                <span class="word" draggable="true">breakfast</span>
+                                <span class="word" draggable="true">?</span>
+                            </div>
+                            <div class="drop-zone" data-answer="Did you eat breakfast?"></div>
+                        </div>
+                    </div>
+                    <button class="check-btn" onclick="checkOrder()">Tekshirish</button>
+                    <div id="orderResult" class="result"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<script src="1gramm.js"></script>
+</body>
+</html>
