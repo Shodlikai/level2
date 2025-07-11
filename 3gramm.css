@@ -1,0 +1,696 @@
+/*
+ * File: 3gramm.css
+ * Description: Styles for the Future Simple interactive learning page.
+ */
+
+/* --- Base Styles and Typography --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* --- Header Styles --- */
+.header {
+    text-align: center;
+    margin-bottom: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.header h1 {
+    font-size: 3rem;
+    color: white;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    font-weight: bold;
+}
+
+.header p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.2rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* --- Progress Bar --- */
+.progress-container {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 25px;
+    padding: 5px;
+    margin-bottom: 30px;
+    backdrop-filter: blur(5px);
+}
+
+.progress-bar {
+    background: linear-gradient(90deg, #4CAF50, #45a049);
+    height: 30px;
+    border-radius: 20px;
+    transition: width 0.8s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 0%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.progress-text {
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* --- Navigation Tabs --- */
+.nav-tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 10px;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.tab-btn {
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    padding: 12px 24px;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 16px;
+    font-weight: 500;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.tab-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.tab-btn.active {
+    background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+    box-shadow: 0 6px 20px rgba(255, 107, 107, 0.3);
+    transform: translateY(-2px);
+}
+
+/* --- Tab Content and Cards --- */
+.tab-content {
+    display: none;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.card h2 {
+    color: #333;
+    margin-bottom: 25px;
+    font-size: 2.2rem;
+    text-align: center;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* --- Rules Section --- */
+.rule-section {
+    margin-bottom: 25px;
+    padding: 20px;
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    border-radius: 15px;
+    border-left: 5px solid #667eea;
+}
+
+.rule-section h3 {
+    color: #495057;
+    margin-bottom: 15px;
+    font-size: 1.4rem;
+}
+
+.rule-section p {
+    color: #6c757d;
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+.rule-section ul {
+    list-style: none;
+    padding-left: 20px;
+}
+
+.rule-section li {
+    color: #6c757d;
+    margin-bottom: 8px;
+    position: relative;
+}
+
+.rule-section li:before {
+    content: "✓";
+    position: absolute;
+    left: -20px;
+    color: #28a745;
+    font-weight: bold;
+}
+
+.time-indicators {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.indicator {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 25px;
+    font-size: 14px;
+    font-weight: 500;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* --- Structure Grid --- */
+.structure-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    margin-top: 25px;
+}
+
+.structure-card {
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.structure-card:hover {
+    transform: translateY(-5px);
+}
+
+.structure-card.positive {
+    background: linear-gradient(135deg, #d4edda, #c3e6cb);
+    border: 2px solid #28a745;
+}
+
+.structure-card.negative {
+    background: linear-gradient(135deg, #f8d7da, #f5c6cb);
+    border: 2px solid #dc3545;
+}
+
+.structure-card.question {
+    background: linear-gradient(135deg, #d1ecf1, #bee5eb);
+    border: 2px solid #17a2b8;
+}
+
+.structure-card h3 {
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+    text-align: center;
+}
+
+.formula {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: 500;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.subject, .verb, .auxiliary, .object {
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin: 0 5px;
+    font-weight: bold;
+}
+
+.subject {
+    background: #ffeaa7;
+}
+
+.verb {
+    background: #74b9ff;
+    color: white;
+}
+
+.auxiliary {
+    background: #fd79a8;
+    color: white;
+}
+
+.object {
+    background: #55a3ff;
+    color: white;
+}
+
+.examples {
+    background: rgba(255, 255, 255, 0.7);
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.examples p {
+    margin-bottom: 8px;
+    font-size: 1rem;
+}
+
+/* --- Examples Grid --- */
+.examples-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 25px;
+    margin-top: 25px;
+}
+
+.example-category {
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.example-category h3 {
+    color: #495057;
+    margin-bottom: 20px;
+    font-size: 1.4rem;
+    text-align: center;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #667eea;
+}
+
+.example-item {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.example-item:hover {
+    transform: translateX(5px);
+}
+
+.english {
+    color: #2d3436;
+    font-weight: 500;
+    margin-bottom: 8px;
+    font-size: 1.05rem;
+}
+
+.uzbek {
+    color: #636e72;
+    font-style: italic;
+    padding-left: 20px;
+    border-left: 3px solid #667eea;
+}
+
+/* --- Exercise Navigation and Content --- */
+.exercise-nav {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.exercise-btn {
+    background: linear-gradient(135deg, #74b9ff, #0984e3);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 14px;
+    font-weight: 500;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.exercise-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.exercise-btn.active {
+    background: linear-gradient(135deg, #00b894, #00a085);
+    box-shadow: 0 6px 20px rgba(0, 184, 148, 0.3);
+}
+
+.exercise-content {
+    display: none;
+}
+
+.exercise-content.active {
+    display: block;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.exercise-content h3 {
+    color: #2d3436;
+    margin-bottom: 25px;
+    font-size: 1.6rem;
+    text-align: center;
+}
+
+/* --- Quiz and Exercise Specific Styles --- */
+.quiz-container {
+    margin-bottom: 25px;
+}
+
+.question {
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-left: 5px solid #667eea;
+}
+
+.question p {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    color: #2d3436;
+    font-weight: 500;
+}
+
+.options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.options label {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-radius: 8px;
+    background: #f8f9fa;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    font-size: 1rem;
+}
+
+.options label:hover {
+    background: #e9ecef;
+}
+
+.options input[type="radio"] {
+    margin-right: 10px;
+    transform: scale(1.2);
+}
+
+.fill-question, .translate-question, .correct-question, .order-question {
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.fill-question { border-left: 5px solid #28a745; }
+.translate-question { border-left: 5px solid #17a2b8; }
+.correct-question { border-left: 5px solid #dc3545; }
+.order-question { border-left: 5px solid #ffc107; }
+
+.fill-question p, .translate-question p, .correct-question p, .order-question p {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    color: #2d3436;
+    font-weight: 500;
+}
+
+.correct-question p {
+    color: #dc3545;
+    text-decoration: line-through;
+}
+
+.fill-input, .translate-input, .correct-input {
+    background: #f8f9fa;
+    border: 2px solid #dee2e6;
+    border-radius: 8px;
+    padding: 10px 12px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+    margin: 0 5px;
+}
+
+.translate-input, .correct-input {
+    width: 100%;
+}
+
+.fill-input:focus, .translate-input:focus, .correct-input:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+/* --- Word Order Exercise --- */
+.word-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 15px;
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: 10px;
+}
+
+.word {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 8px;
+    cursor: move;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.word:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.drop-zone {
+    min-height: 50px;
+    border: 2px dashed #dee2e6;
+    border-radius: 10px;
+    padding: 15px;
+    background: #f8f9fa;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+}
+
+.drop-zone:hover {
+    border-color: #667eea;
+    background: rgba(102, 126, 234, 0.1);
+}
+
+/* --- Check Button and Results --- */
+.check-btn {
+    background: linear-gradient(135deg, #00b894, #00a085);
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    display: block;
+    margin: 30px auto 0;
+}
+
+.check-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 184, 148, 0.3);
+    animation: bounce 0.6s ease;
+}
+
+.check-btn:active {
+    transform: translateY(0);
+}
+
+.result {
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 500;
+    background: linear-gradient(135deg, #ddd6fe, #c4b5fd);
+    color: #5b21b6;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.correct-answer {
+    color: #28a745;
+    margin: 5px 0;
+}
+
+.wrong-answer {
+    color: #dc3545;
+    margin: 5px 0;
+}
+
+.final-score {
+    margin-top: 15px;
+    padding: 10px;
+    background: #f8f9fa;
+    border-radius: 5px;
+    border: 1px dashed #667eea;
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+    
+    .header h1 {
+        font-size: 2rem;
+    }
+    
+    .header p {
+        font-size: 1rem;
+    }
+    
+    .nav-tabs, .exercise-nav {
+        flex-direction: column;
+        gap: 5px;
+    }
+    
+    .tab-btn, .exercise-btn {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .structure-grid, .examples-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .word-container {
+        justify-content: center;
+    }
+    
+    .options {
+        gap: 8px;
+    }
+    
+    .card {
+        padding: 20px;
+    }
+    
+    .card h2 {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        padding: 20px;
+    }
+    
+    .header h1 {
+        font-size: 1.5rem;
+    }
+    
+    .card {
+        padding: 15px;
+    }
+    
+    .structure-card, .example-category, .question, .fill-question, .translate-question, .correct-question, .order-question {
+        padding: 15px;
+    }
+    
+    .word {
+        padding: 6px 12px;
+        font-size: 14px;
+    }
+}
+
+/* --- Animations --- */
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+@keyframes slideUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* --- Scrollbar Styling (Webkit Browsers) --- */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, #764ba2, #667eea);
+}
